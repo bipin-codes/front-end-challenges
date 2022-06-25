@@ -7,10 +7,12 @@ interface ButtonProps {
   startIcon?: string;
   endIcon?: string;
   color?: string;
+  size?: string;
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { variant, disableShadow, disabled, startIcon, endIcon, color } = props;
+  const { variant, disableShadow, disabled, startIcon, endIcon, color, size } =
+    props;
 
   let list: Array<string | boolean> = ["original"];
   if (variant) list.push(variant);
@@ -18,7 +20,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   if (disableShadow) list.push("disableShadow");
   if (disabled) list.push("disabled");
   if (startIcon || endIcon) list.push("primary");
-
+  if (size) list.push(size);
   let textToShow = color ? color : "Default";
 
   return (
