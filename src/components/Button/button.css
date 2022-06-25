@@ -1,0 +1,15 @@
+.default {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 0;
+  margin: 10px;
+}
+.outline {
+  background-color: transparent;
+  color: rgb(40, 40, 246);
+  border: 1px solid rgb(40, 40, 246);
+}
+.text {
+  color: rgb(40, 40, 246);
+  background-color: transparent;
+}
