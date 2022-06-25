@@ -28,6 +28,20 @@ export const App: React.FC = () => {
         <br />
         <Button variant="text" />
       </div>
+
+      {/* No-Shadow Button */}
+      <div style={inDivStyle}>
+        {"<Button disableShadow/>"}
+        <br />
+        <Button disableShadow />
+      </div>
+
+      {/* Disabled BUTTON */}
+      <div style={inDivStyle}>
+        {"<Button disabled/>"}
+        <br />
+        <Button disabled variant="outline" />
+      </div>
     </div>
   );
 };
