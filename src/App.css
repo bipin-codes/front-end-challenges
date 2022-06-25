@@ -1,4 +1,4 @@
-.outDivStyle {
+.parent {
   margin: 50px 100px;
   display: grid;
 
@@ -6,10 +6,12 @@
   column-gap: 50;
   grid-template-columns: auto auto auto auto;
 }
-.inDivStyle {
+/* child div */
+.section-div {
   margin: 10px;
 }
-.innerdiv {
+/* row based div using flexbox */
+.row-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

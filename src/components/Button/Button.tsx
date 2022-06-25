@@ -9,11 +9,11 @@ interface ButtonProps {
   color?: string;
   size?: string;
 }
-
+// helper function to get the proper class needed
 const getColors = (props: ButtonProps) => {
   const { variant, disableShadow, disabled, startIcon, endIcon, color, size } =
     props;
-
+  // can refactor some of these checks to better code probably using dictionary
   let list: Array<string | boolean> = ["original"];
   if (variant) list.push(variant);
   if (color) list.push(color);
@@ -25,8 +25,8 @@ const getColors = (props: ButtonProps) => {
 };
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const list = getColors(props);
-  let textToShow = props.color ? props.color : "Default";
+  const list = getColors(props); //get the class list
+  let textToShow = props.color ? props.color : "Default"; //text to show inside the button
   return (
     <>
       <button disabled={props.disabled} className={list.join(" ")}>

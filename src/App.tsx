@@ -6,47 +6,47 @@ export const App: React.FC = () => {
     <>
       <h4 style={{ margin: 30 }}>Buttons</h4>
 
-      <div className="outDivStyle">
+      <div className="parent">
         {/* LABELS */}
 
         {/* SIMPLE BUTTON */}
-        <div className="inDivStyle " style={{ gridRowStart: 1 }}>
+        <div className="section-div " style={{ gridRowStart: 1 }}>
           {"<Button />"}
           <br />
           <Button />
         </div>
 
         {/* OUTLINE BUTTON */}
-        <div className="inDivStyle " style={{ gridRowStart: 2 }}>
+        <div className="section-div " style={{ gridRowStart: 2 }}>
           {"<Button variant='outline'/>"}
           <br />
           <Button variant="outline" />
         </div>
 
         {/* Text BUTTON */}
-        <div className="inDivStyle " style={{ gridRowStart: 3 }}>
+        <div className="section-div " style={{ gridRowStart: 3 }}>
           {"<Button variant='text'/>"}
           <br />
           <Button variant="text" />
         </div>
 
         {/* No-Shadow Button */}
-        <div className="inDivStyle " style={{ gridRowStart: 4 }}>
+        <div className="section-div " style={{ gridRowStart: 4 }}>
           {"<Button disableShadow/>"}
           <br />
           <Button disableShadow />
         </div>
 
         {/* Disabled BUTTON */}
-        <div className="inDivStyle " style={{ gridRowStart: 5 }}>
+        <div className="section-div " style={{ gridRowStart: 5 }}>
           {"<Button disabled/>"}
           <br />
           <Button disabled />
         </div>
 
         {/* Start Icon BUTTON */}
-        <div className="inDivStyle" style={{ gridRowStart: 6 }}>
-          <div className="innerdiv">
+        <div className="section-div" style={{ gridRowStart: 6 }}>
+          <div className="row-div">
             <div>
               {"<Button startIcon='add_shopping_cart' />"}
               <br />
@@ -61,8 +61,8 @@ export const App: React.FC = () => {
         </div>
         {/* SIZE */}
         {/* COLOR */}
-        <div className="inDivStyle" style={{ gridRowStart: 7 }}>
-          <div className="innerdiv">
+        <div className="section-div" style={{ gridRowStart: 7 }}>
+          <div className="row-div">
             <div>
               {"<Button size='sm' />"}
               <br />
@@ -82,8 +82,8 @@ export const App: React.FC = () => {
           </div>
         </div>
         {/* COLOR */}
-        <div className="inDivStyle" style={{ gridRowStart: 8 }}>
-          <div className="innerdiv">
+        <div className="section-div" style={{ gridRowStart: 8 }}>
+          <div className="row-div">
             <div>
               {"<Button color='default' />"}
               <br />
