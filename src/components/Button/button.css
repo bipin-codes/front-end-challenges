@@ -34,14 +34,25 @@
 }
 .outline {
   background-color: transparent;
-  color: rgb(40, 40, 246);
-  border: 1px solid rgb(40, 40, 246);
+  color: #3d5afe;
+
+  border: 1px solid #3d5afe;
 }
+.outline:hover,
+.outline:focus {
+  background-color: #2828f62d;
+}
+
 .text {
   color: rgb(40, 40, 246);
   background-color: transparent;
   box-shadow: none;
 }
+.text:hover,
+.text:focus {
+  background-color: rgba(80, 80, 245, 0.319);
+}
+
 .disableShadow {
   box-shadow: none;
 }
@@ -65,15 +76,38 @@
   background-color: rgb(58, 58, 243);
   color: white;
 }
+.primary:hover,
+.primary:focus {
+  background-color: rgb(46, 46, 194);
+  color: white;
+}
+
 .default {
   color: grey;
   background-color: rgb(222, 218, 218);
 }
+.default:hover,
+.default:focus {
+  color: rgb(101, 100, 100);
+  background-color: rgb(181, 180, 180);
+}
+
 .secondary {
   color: white;
   background-color: #485e5e;
 }
+.secondary:hover,
+.secondary:focus {
+  color: white;
+  background-color: #354646;
+}
+
 .danger {
   color: white;
-  background-color: rgb(219, 60, 2);
+  background-color: rgb(219, 49, 2);
+}
+.danger:hover,
+.danger:focus {
+  color: white;
+  background-color: rgb(166, 45, 1);
 }

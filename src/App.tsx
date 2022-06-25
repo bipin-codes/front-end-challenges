@@ -41,7 +41,7 @@ export const App: React.FC = () => {
         <div className="inDivStyle " style={{ gridRowStart: 5 }}>
           {"<Button disabled/>"}
           <br />
-          <Button disabled variant="outline" />
+          <Button disabled />
         </div>
 
         {/* Start Icon BUTTON */}
