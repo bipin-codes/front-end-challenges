@@ -1,47 +1,81 @@
 import React from "react";
 import { Button } from "./components/Button/Button";
+import "./App.css";
 export const App: React.FC = () => {
-  const outDivStyle = { margin: 100 };
-  const inDivStyle = { margin: 10 };
   return (
-    <div style={outDivStyle}>
-      {/* LABELS */}
-      <h4>Buttons</h4>
+    <>
+      <h4 style={{ margin: 30 }}>Buttons</h4>
 
-      {/* SIMPLE BUTTON */}
-      <div style={inDivStyle}>
-        {"<Button />"}
-        <br />
-        <Button />
-      </div>
+      <div className="outDivStyle">
+        {/* LABELS */}
 
-      {/* OUTLINE BUTTON */}
-      <div style={inDivStyle}>
-        {"<Button variant='outline'/>"}
-        <br />
-        <Button variant="outline" />
-      </div>
+        {/* SIMPLE BUTTON */}
+        <div className="inDivStyle row-1">
+          {"<Button />"}
+          <br />
+          <Button />
+        </div>
 
-      {/* Text BUTTON */}
-      <div style={inDivStyle}>
-        {"<Button variant='text'/>"}
-        <br />
-        <Button variant="text" />
-      </div>
+        {/* OUTLINE BUTTON */}
+        <div className="inDivStyle row-2">
+          {"<Button variant='outline'/>"}
+          <br />
+          <Button variant="outline" />
+        </div>
 
-      {/* No-Shadow Button */}
-      <div style={inDivStyle}>
-        {"<Button disableShadow/>"}
-        <br />
-        <Button disableShadow />
-      </div>
+        {/* Text BUTTON */}
+        <div className="inDivStyle row-3">
+          {"<Button variant='text'/>"}
+          <br />
+          <Button variant="text" />
+        </div>
 
-      {/* Disabled BUTTON */}
-      <div style={inDivStyle}>
-        {"<Button disabled/>"}
-        <br />
-        <Button disabled variant="outline" />
+        {/* No-Shadow Button */}
+        <div className="inDivStyle row-4">
+          {"<Button disableShadow/>"}
+          <br />
+          <Button disableShadow />
+        </div>
+
+        {/* Disabled BUTTON */}
+        <div className="inDivStyle row-5">
+          {"<Button disabled/>"}
+          <br />
+          <Button disabled variant="outline" />
+        </div>
+
+        {/* Start Icon BUTTON */}
+        <div className="inDivStyle row-6">
+          <div className="innerdiv">
+            <div>
+              {"<Button startIcon='add_shopping_cart' />"}
+              <br />
+              <Button startIcon="add_shopping_cart" />
+            </div>
+            <div>
+              {"<Button startIcon='add_shopping_cart' />"}
+              <br />
+              <Button endIcon="nat" />
+            </div>
+          </div>
+        </div>
+
+        {/* COLOR */}
+        <div className="inDivStyle" style={{ gridRowStart: 7 }}>
+          <div className="innerdiv">
+            <div>
+              {"<Button color='default' />"}
+              <br />
+              <Button color="default" />
+            </div>
+            <div>
+              {"<Button color='primary' />"}
+              <br />
+              <Button color="primary" />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };

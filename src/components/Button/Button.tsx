@@ -4,21 +4,27 @@ interface ButtonProps {
   variant?: string;
   disableShadow?: boolean;
   disabled?: boolean;
+  startIcon?: string;
+  endIcon?: string;
+  color?: string;
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  console.log(props);
-  const { variant, disableShadow, disabled } = props;
+  const { variant, disableShadow, disabled, startIcon, endIcon, color } = props;
 
-  let list: Array<string | boolean> = ["default"];
+  let list: Array<string | boolean> = ["original"];
   if (variant) list.push(variant);
+  if (color) list.push(color);
   if (disableShadow) list.push("disableShadow");
   if (disabled) list.push("disabled");
+  if (startIcon || endIcon) list.push("primary");
 
   return (
     <>
-      <button disabled className={list.join(" ")}>
-        Default
+      <button disabled={disabled} className={list.join(" ")}>
+        {startIcon && <span className="material-icons">{startIcon}</span>}
+        <span>Default</span>
+        {endIcon && <span className="material-icons">{endIcon}</span>}
       </button>
     </>
   );
