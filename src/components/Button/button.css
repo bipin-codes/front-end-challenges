@@ -59,3 +59,11 @@
   color: grey;
   background-color: rgb(222, 218, 218);
 }
+.secondary {
+  color: white;
+  background-color: #485e5e;
+}
+.danger {
+  color: white;
+  background-color: rgb(219, 60, 2);
+}

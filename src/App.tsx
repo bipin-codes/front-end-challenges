@@ -73,6 +73,17 @@ export const App: React.FC = () => {
               <br />
               <Button color="primary" />
             </div>
+
+            <div>
+              {"<Button color='seconday' />"}
+              <br />
+              <Button color="secondary" />
+            </div>
+            <div>
+              {"<Button color='danger' />"}
+              <br />
+              <Button color="danger" />
+            </div>
           </div>
         </div>
       </div>
