@@ -10,7 +10,7 @@ interface ButtonProps {
   size?: string;
 }
 
-export const Button: React.FC<ButtonProps> = (props) => {
+const getColors = (props: ButtonProps) => {
   const { variant, disableShadow, disabled, startIcon, endIcon, color, size } =
     props;
 
@@ -21,14 +21,22 @@ export const Button: React.FC<ButtonProps> = (props) => {
   if (disabled) list.push("disabled");
   if (startIcon || endIcon) list.push("primary");
   if (size) list.push(size);
-  let textToShow = color ? color : "Default";
+  return list;
+};
 
+export const Button: React.FC<ButtonProps> = (props) => {
+  const list = getColors(props);
+  let textToShow = props.color ? props.color : "Default";
   return (
     <>
-      <button disabled={disabled} className={list.join(" ")}>
-        {startIcon && <span className="material-icons">{startIcon}</span>}
+      <button disabled={props.disabled} className={list.join(" ")}>
+        {props.startIcon && (
+          <span className="material-icons">{props.startIcon}</span>
+        )}
         <span>{textToShow}</span>
-        {endIcon && <span className="material-icons">{endIcon}</span>}
+        {props.endIcon && (
+          <span className="material-icons">{props.endIcon}</span>
+        )}
       </button>
     </>
   );
