@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../components/Button/Button";
+import { Button } from "../../components/Button/Button";
 import "./ButtonPage.css";
 export const ButtonPage: React.FC = () => {
   return (
