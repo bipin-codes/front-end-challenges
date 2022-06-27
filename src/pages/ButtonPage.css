@@ -1,0 +1,19 @@
+.parent {
+  margin: 50px 100px;
+  display: grid;
+
+  gap: 10px;
+  column-gap: 50;
+  grid-template-columns: auto auto auto auto;
+}
+/* child div */
+.section-div {
+  margin: 10px;
+}
+/* row based div using flexbox */
+.row-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
