@@ -24,7 +24,7 @@
   color: rgb(174, 174, 174);
 }
 .input {
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 10px;
   color: rgb(174, 174, 174);
 }
@@ -43,4 +43,8 @@
 }
 .input-danger-hover {
   border-color: rgb(87, 86, 86);
+}
+
+.disabled {
+  background-color: rgb(213, 211, 211);
 }
