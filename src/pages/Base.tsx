@@ -4,12 +4,17 @@ export const Index: React.FC = () => {
   return (
     <>
       <nav>
+        <h3 style={{ margin: "20px" }}>Welcome to Front End Challenges</h3>
         <ul>
           <li>
-            <Link to="/button">Buttons</Link>
+            <Link to="/button" style={{ textDecoration: "none" }}>
+              Button Component Challenge
+            </Link>
           </li>
           <li>
-            <Link to="/input">InputFields</Link>
+            <Link to="/input" style={{ textDecoration: "none" }}>
+              Input Component Challenge
+            </Link>
           </li>
           {/* <li>
             <Link to="/contact">Contact</Link>
