@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ButtonPage } from "./pages/Buttons/ButtonPage";
-import { Index } from "./pages/Base";
+import { Index } from "./pages/Index";
 import { InputPage } from "./pages/Input/InputPage";
 export const App: React.FC = () => {
   return (
