@@ -4,11 +4,12 @@ import "./Input.css";
 interface InputProps {
   error?: boolean;
   disabled?: boolean;
+  helperText?: string;
 }
 
 // decide styles for input and label
 const getStyles = (
-  { error }: InputProps,
+  { error, helperText }: InputProps,
   isFocused: boolean,
   isHovered: boolean,
   elementName: string
@@ -31,7 +32,7 @@ export const Input: React.FC<InputProps> = (props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   //Unrwapping props
-  const { disabled } = props;
+  const { disabled, helperText } = props;
 
   return (
     <>
@@ -64,6 +65,19 @@ export const Input: React.FC<InputProps> = (props) => {
           )} ${disabled ? "disabled" : ""}`}
           placeholder="Placeholder"
         />
+
+        {helperText && (
+          <div
+            className={`label ${getStyles(
+              props,
+              isFocused,
+              isHovered,
+              "label"
+            )}`}
+          >
+            {helperText}
+          </div>
+        )}
       </div>
     </>
   );

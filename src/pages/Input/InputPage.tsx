@@ -35,6 +35,19 @@ export const InputPage: React.FC = () => {
           <br />
           <Input disabled />
         </div>
+
+        <div className="section-div" style={{ gridRowStart: 4 }}>
+          <div className="row-div">
+            <div>
+              <span>{"<Input helperText='Some Helper Text'/>"}</span>
+              <Input helperText="Some helper text" />
+            </div>
+            <div>
+              <span>{"<Input helperText='Some Helper Text' error/>"}</span>
+              <Input helperText="Some helper text" error />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
