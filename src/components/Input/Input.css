@@ -1,23 +1,46 @@
+/* LABEL STYLING */
 .label {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   display: block;
 }
-.label-focus {
-  color: rgb(41, 41, 242);
-  margin-bottom: 5px;
-  display: block;
+
+.label-primary-focus {
+  color: blue;
 }
-/* input-group-default */
-.input {
+.label-danger {
+  color: red;
+}
+.label-danger-focus {
+  color: red;
+}
+.label-danger-hover {
+  color: black;
+}
+/* INPUT STYLING */
+.input-primary {
   border-radius: 10px;
   border-color: rgb(173, 171, 171);
   padding: 10px;
   color: rgb(174, 174, 174);
 }
-.input:focus {
-  border-color: rgb(41, 41, 242);
+.input {
+  border-radius: 10px;
+  padding: 10px;
+  color: rgb(174, 174, 174);
+}
+.input-primary-focus {
+  border-color: blue;
 }
 
-.input:hover {
+.input-primary-hover {
   border-color: rgb(75, 74, 74);
+}
+
+.input-danger,
+.input-danger-focus {
+  border-color: rgb(247, 73, 73);
+  outline-color: rgb(247, 73, 73);
+}
+.input-danger-hover {
+  border-color: rgb(87, 86, 86);
 }
