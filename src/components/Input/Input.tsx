@@ -3,14 +3,17 @@ import "./Input.css";
 
 interface InputProps {
   error?: boolean;
+  disabled?: boolean;
 }
-const getLabelClass = (
-  props: InputProps,
+
+// decide styles for input and label
+const getStyles = (
+  { error }: InputProps,
   isFocused: boolean,
   isHovered: boolean,
   elementName: string
 ): string => {
-  if (props.error) {
+  if (error) {
     // isFocused should always be on top-> as focus needs to take priority on hover
     if (isFocused) return `${elementName}-danger-focus`;
     if (isHovered) return `${elementName}-danger-hover`;
@@ -24,33 +27,23 @@ const getLabelClass = (
 };
 
 export const Input: React.FC<InputProps> = (props) => {
-  console.log("Render");
-
   const [isFocused, setIsFocus] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   //Unrwapping props
-  const error = props.error;
-  const styleList: Array<string> = ["input"];
-  if (error) {
-    styleList.push("error");
-  }
+  const { disabled } = props;
 
   return (
     <>
       <div>
         <label
-          className={`label ${getLabelClass(
-            props,
-            isFocused,
-            isHovered,
-            "label"
-          )}`}
+          className={`label ${getStyles(props, isFocused, isHovered, "label")}`}
         >
           label
         </label>
         <br></br>
         <input
+          disabled={disabled}
           onFocus={(e) => {
             setIsFocus(true);
           }}
@@ -63,12 +56,12 @@ export const Input: React.FC<InputProps> = (props) => {
           onMouseLeave={(e) => {
             setIsHovered(false);
           }}
-          className={`input ${getLabelClass(
+          className={`input ${getStyles(
             props,
             isFocused,
             isHovered,
             "input"
-          )}`}
+          )} ${disabled ? "disabled" : ""}`}
           placeholder="Placeholder"
         />
       </div>
