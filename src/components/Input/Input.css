@@ -1,3 +1,7 @@
+input {
+  outline: none;
+}
+
 /* LABEL STYLING */
 .label {
   margin-bottom: 2px;
@@ -47,4 +51,15 @@
 
 .disabled {
   background-color: rgb(213, 211, 211);
+}
+/* helperText */
+.helper {
+  color: black;
+}
+.div-error,
+.div-danger-focus {
+  color: red;
+}
+.div-danger-hover {
+  color: black;
 }
