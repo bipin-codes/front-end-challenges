@@ -9,6 +9,9 @@ interface InputProps {
   endIcon?: string;
   text?: string;
   size?: string;
+  fullWidth?: boolean;
+  multiline?: boolean;
+  rows?: number;
 }
 
 // decide styles for input and label
@@ -36,7 +39,17 @@ export const Input: React.FC<InputProps> = (props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   //Unrwapping props
-  const { disabled, helperText, startIcon, endIcon, text, size } = props;
+  const {
+    disabled,
+    helperText,
+    startIcon,
+    endIcon,
+    text,
+    size,
+    fullWidth,
+    multiline,
+    rows,
+  } = props;
 
   return (
     <>
@@ -54,7 +67,9 @@ export const Input: React.FC<InputProps> = (props) => {
             isFocused,
             isHovered,
             "input"
-          )} ${disabled ? "disabled" : ""}`}
+          )} ${disabled ? "disabled" : ""} ${
+            fullWidth ? "fullWidth" : "partial"
+          }`}
           onFocus={(e) => {
             setIsFocus(true);
           }}
@@ -70,17 +85,22 @@ export const Input: React.FC<InputProps> = (props) => {
         >
           {startIcon && <span className="material-icons">{startIcon}</span>}
           {/* SHOW INPUT BOX IF REQUIRED */}
-          <input
-            style={{
-              border: "none",
-              outline: "none",
-              background: "transparent",
-            }}
-            className={size ? size : ""}
-            placeholder="Placeholder"
-            disabled={disabled}
-            value={text ? text : ""}
-          />
+          {multiline ? (
+            <textarea rows={rows}></textarea>
+          ) : (
+            <input
+              style={{
+                border: "none",
+                outline: "none",
+                background: "transparent",
+                width: "80%",
+              }}
+              className={size ? size : ""}
+              placeholder="Placeholder"
+              disabled={disabled}
+              defaultValue={text ? text : ""}
+            />
+          )}
           {endIcon && <span className="material-icons">{endIcon}</span>}
         </div>
         {/* SHOW HELPER TEXT IF REQUIRED */}

@@ -97,3 +97,11 @@ input {
 .md {
   padding: 14px;
 }
+
+.fullWidth {
+  display: block;
+  width: 100%;
+}
+.partial {
+  width: 25%;
+}

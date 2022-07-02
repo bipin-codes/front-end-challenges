@@ -96,6 +96,16 @@ export const InputPage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Input fullWidth */}
+        <div className="section-div" style={{ gridRowStart: 8 }}>
+          <div className="row-div">
+            <div style={{ width: "100%" }}>
+              <span>{"<Input fullWidth> "}</span>
+              <Input fullWidth />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
