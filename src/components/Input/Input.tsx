@@ -5,6 +5,9 @@ interface InputProps {
   error?: boolean;
   disabled?: boolean;
   helperText?: string;
+  startIcon?: string;
+  endIcon?: string;
+  text?: string;
 }
 
 // decide styles for input and label
@@ -32,7 +35,7 @@ export const Input: React.FC<InputProps> = (props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   //Unrwapping props
-  const { disabled, helperText } = props;
+  const { disabled, helperText, startIcon, endIcon, text } = props;
 
   return (
     <>
@@ -43,8 +46,14 @@ export const Input: React.FC<InputProps> = (props) => {
           label
         </label>
         <br></br>
-        <input
-          disabled={disabled}
+        {/* SIMULATING DIV AS INPUT BOX */}
+        <div
+          className={`input ${getStyles(
+            props,
+            isFocused,
+            isHovered,
+            "input"
+          )} ${disabled ? "disabled" : ""}`}
           onFocus={(e) => {
             setIsFocus(true);
           }}
@@ -57,15 +66,22 @@ export const Input: React.FC<InputProps> = (props) => {
           onMouseLeave={(e) => {
             setIsHovered(false);
           }}
-          className={`input ${getStyles(
-            props,
-            isFocused,
-            isHovered,
-            "input"
-          )} ${disabled ? "disabled" : ""}`}
-          placeholder="Placeholder"
-        />
-
+        >
+          {startIcon && <span className="material-icons">{startIcon}</span>}
+          {/* SHOW INPUT BOX IF REQUIRED */}
+          <input
+            style={{
+              border: "none",
+              outline: "none",
+              background: "transparent",
+            }}
+            placeholder="Placeholder"
+            disabled={disabled}
+            value={text ? text : ""}
+          />
+          {endIcon && <span className="material-icons">{endIcon}</span>}
+        </div>
+        {/* SHOW HELPER TEXT IF REQUIRED */}
         {helperText && (
           <div
             className={`label ${getStyles(
