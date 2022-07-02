@@ -30,7 +30,7 @@ input {
 
 /* LABEL STYLING */
 .label {
-  margin-bottom: 2px;
+  margin-top: 10px;
   display: block;
 }
 
@@ -89,4 +89,11 @@ input {
 }
 .div-danger-hover {
   color: black;
+}
+
+.sm {
+  padding: 7px;
+}
+.md {
+  padding: 14px;
 }

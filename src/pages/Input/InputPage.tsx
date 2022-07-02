@@ -82,6 +82,20 @@ export const InputPage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Input Size */}
+        <div className="section-div" style={{ gridRowStart: 7 }}>
+          <div className="row-div">
+            <div>
+              <span>{"<Input size = 'sm'> "}</span>
+              <Input size="sm" />
+            </div>
+            <div>
+              <span>{"<Input size = 'md'> "}</span>
+              <Input size="md" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

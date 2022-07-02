@@ -8,6 +8,7 @@ interface InputProps {
   startIcon?: string;
   endIcon?: string;
   text?: string;
+  size?: string;
 }
 
 // decide styles for input and label
@@ -35,7 +36,7 @@ export const Input: React.FC<InputProps> = (props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   //Unrwapping props
-  const { disabled, helperText, startIcon, endIcon, text } = props;
+  const { disabled, helperText, startIcon, endIcon, text, size } = props;
 
   return (
     <>
@@ -43,7 +44,7 @@ export const Input: React.FC<InputProps> = (props) => {
         <label
           className={`label ${getStyles(props, isFocused, isHovered, "label")}`}
         >
-          label
+          Label
         </label>
         <br></br>
         {/* SIMULATING DIV AS INPUT BOX */}
@@ -75,6 +76,7 @@ export const Input: React.FC<InputProps> = (props) => {
               outline: "none",
               background: "transparent",
             }}
+            className={size ? size : ""}
             placeholder="Placeholder"
             disabled={disabled}
             value={text ? text : ""}
