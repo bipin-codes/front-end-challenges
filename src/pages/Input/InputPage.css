@@ -4,7 +4,7 @@
 
   gap: 10px;
   column-gap: 50;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto;
 }
 /* child div */
 .section-div {
@@ -20,4 +20,8 @@
 
 span {
   color: rgb(160, 160, 160);
+}
+.row-div > div {
+  width: 100%;
+  margin-right: 30px;
 }
