@@ -106,6 +106,15 @@ export const InputPage: React.FC = () => {
             </div>
           </div>
         </div>
+        {/* Textarea Input */}
+        <div className="section-div" style={{ gridRowStart: 9 }}>
+          <div className="row-div">
+            <div style={{ width: "100%" }}>
+              <span>{"<Input multiline rows = 3> "}</span>
+              <Input startIcon="" multiline rows={3} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
