@@ -86,7 +86,7 @@ export const Input: React.FC<InputProps> = (props) => {
           {startIcon && <span className="material-icons">{startIcon}</span>}
           {/* SHOW INPUT BOX IF REQUIRED */}
           {multiline ? (
-            <textarea></textarea>
+            <textarea rows={rows}></textarea>
           ) : (
             <input
               style={{
