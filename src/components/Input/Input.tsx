@@ -86,7 +86,19 @@ export const Input: React.FC<InputProps> = (props) => {
           {startIcon && <span className="material-icons">{startIcon}</span>}
           {/* SHOW INPUT BOX IF REQUIRED */}
           {multiline ? (
-            <textarea rows={rows}></textarea>
+            <textarea
+              rows={rows}
+              style={{
+                border: "none",
+                outline: "none",
+                background: "transparent",
+                width: "100%",
+              }}
+              className={size ? size : ""}
+              placeholder="Placeholder"
+              disabled={disabled}
+              defaultValue={text ? text : ""}
+            ></textarea>
           ) : (
             <input
               style={{

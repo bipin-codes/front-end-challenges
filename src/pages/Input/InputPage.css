@@ -25,3 +25,8 @@ span {
   width: 100%;
   margin-right: 30px;
 }
+textarea {
+  outline: none;
+  border: none;
+  width: 100%;
+}
