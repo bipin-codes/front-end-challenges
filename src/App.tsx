@@ -7,10 +7,9 @@ export const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Index />}>
-          <Route path="/button" element={<ButtonPage />}></Route>
-          <Route path="/input" element={<InputPage />}></Route>
-        </Route>
+        <Route path="/" element={<Index />} />
+        <Route path="/button" element={<ButtonPage />} />
+        <Route path="/input" element={<InputPage />} />
       </Routes>
     </BrowserRouter>
   );
