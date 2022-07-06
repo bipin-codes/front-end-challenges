@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Index: React.FC = () => {
   return (
     <>
-      <nav>
+      <div className="container">
         <h3 style={{ margin: "20px" }}>Welcome to Front End Challenges</h3>
         <ul>
           <li>
@@ -24,7 +24,7 @@ export const Index: React.FC = () => {
             </Link>
           </li>
         </ul>
-      </nav>
+      </div>
     </>
   );
 };
