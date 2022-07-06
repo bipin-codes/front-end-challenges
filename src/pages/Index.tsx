@@ -20,8 +20,8 @@ export const Index: React.FC = () => {
           <p className="text-sm-start m-2">
             These challenges are done with sole purpose of improving <span className="text-warning">Front end skills in React JS</span>.
           </p>
-          <p>Thanks to <Link to="https://devchallenges.io/" target={"_blank"} rel="noreferrer">devchallenges.io</Link> to host these challenges.</p>
-          <h4 className="m-5" >You can find repository to project <Link rel="noreferrer" to="https://github.com/bipin-codes/front-end-challenges" target={"_blank"}>Front end challenges</Link></h4>
+          <p>Thanks to <a rel="noreferrer" href="https://devchallenges.io/" target={"_blank"}>devchallenges.io</a> to host these challenges.</p>
+          <h4 className="m-5" >You can find repository to project <a rel="noreferrer" href="https://github.com/bipin-codes/front-end-challenges" target={"_blank"}>Front end challenges</a></h4>
         </div>
         <div className="container">
 
