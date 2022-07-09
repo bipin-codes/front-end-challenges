@@ -1,15 +1,72 @@
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  /* -webkit-font-feature-settings: "liga"; */
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v130/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2)
+    format("woff2");
+}
+
 .navbar_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 .navbar_container_right {
   margin-left: auto;
 }
 .navbar_container_left {
   margin-right: auto;
+  padding: 1rem;
 }
 .search-parent {
   border-radius: 10px;
-  border: solid 1px black;
+  border: none;
+  box-shadow: 0px 0px 6px 0 #00000021;
+  display: flex;
+  flex-wrap: nowrap;
 }
+.search-box {
+  outline: none;
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  cursor: default;
+  margin: 1rem;
+}
+.icon {
+  text-align: center;
+  color: #eb5757;
+  margin: 1rem;
+  font-size: 24px;
+  cursor: pointer;
+}
+.vl {
+  border-left: 3px solid #f2f2f2;
+  height: "100%";
+}
+@media only screen and (max-width: 667px) {
+  .navbar_container_right {
+    margin-top: 2rem;
+  }
+}
+
+/* .search-box-bordered {
+  border-left: #888888 2px solid;
+} */
