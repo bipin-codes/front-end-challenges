@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import logo from "../../../assets/images/logo.png";
 import "./Navbar.css";
 const Navbar = () => {
-  const [guests, setGuests] = useState(undefined);
-  const [location, setLocation] = useState("Helsinki, Finland");
+  const [guests] = useState(undefined);
+  const [location] = useState("Helsinki, Finland");
 
   return (
     <nav className="navbar_container">
       <div className="navbar_container_left">
-        <a className="logo">
+        <div className="logo">
           <img src={logo} alt="" />
-        </a>
+        </div>
       </div>
       <div className="navbar_container_right">
         <div className="search-parent">
