@@ -6,7 +6,7 @@ import data from "../../stays.json";
 import styles from "./WindbNb.module.css";
 
 const WindBnb = () => {
-  const [stays, setStays] = useState<[Stay]>(data as [Stay]);
+  const [stays] = useState<[Stay]>(data as [Stay]);
 
   const renderStay = (stay: Stay, index: number) => {
     return (
