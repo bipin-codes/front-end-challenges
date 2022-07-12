@@ -85,4 +85,12 @@ body {
   .grid {
     grid-template-columns: auto;
   }
+  .parent_container {
+    margin: 3rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .parent_container {
+    margin: 1rem;
+  }
 }

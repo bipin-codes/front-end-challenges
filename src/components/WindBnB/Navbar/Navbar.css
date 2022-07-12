@@ -64,12 +64,13 @@
   border-left: 3px solid #f2f2f2;
   height: "100%";
 }
-@media only screen and (max-width: 667px) {
+
+@media only screen and (max-width: 637px) {
   .navbar_container_right {
-    margin-top: 2rem;
+    margin: 2rem 0rem 0rem 0rem;
+    width: 100%;
+  }
+  .search-box {
+    width: 40%;
   }
 }
-
-/* .search-box-bordered {
-  border-left: #888888 2px solid;
-} */
