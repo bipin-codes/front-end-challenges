@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import logo from "../../../assets/images/logo.png";
 import "./Navbar.css";
-const Navbar = () => {
+const Navbar: FC<{ clickHandler: () => void }> = ({ clickHandler }) => {
   const [guests] = useState(undefined);
   const [location] = useState("Helsinki, Finland");
 
@@ -31,7 +31,10 @@ const Navbar = () => {
           />
           <div className="vl"></div>
 
-          <span className="material-icons icon"> {"search"}</span>
+          <span className="material-icons icon" onClick={clickHandler}>
+            {" "}
+            {"search"}
+          </span>
         </div>
       </div>
     </nav>

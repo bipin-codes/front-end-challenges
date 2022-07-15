@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Header from "../../components/WindBnB/Header/Header";
+import Modal from "../../components/WindBnB/Modal/Modal";
 import Navbar from "../../components/WindBnB/Navbar/Navbar";
 import Stay from "../../components/WindBnB/type";
 import data from "../../stays.json";
 import styles from "./WindbNb.module.css";
-
 const WindBnb = () => {
   const [stays] = useState<[Stay]>(data as [Stay]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const renderStay = (stay: Stay, index: number) => {
     return (
@@ -37,7 +38,23 @@ const WindBnb = () => {
     <React.Fragment>
       <div className={styles.parent_container}>
         {/* NAVBAR */}
-        <Navbar />
+        <Navbar
+          clickHandler={() => {
+            setIsOpen(true);
+          }}
+        />
+
+        <Modal
+          handleClose={() => {
+            setIsOpen(false);
+          }}
+          isOpen={isOpen}
+        >
+          <div className={styles.modal_bg}>
+            <h1>Hello World</h1>
+          </div>
+        </Modal>
+
         {/* HEADER FOR CONTENT */}
         <Header staysLength={data.length} />
 
