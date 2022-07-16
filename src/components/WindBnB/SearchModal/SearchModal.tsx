@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Styles from "./SearchModal.module.css";
 const SearchModal = () => {
-  const [currentFilter, setCurrentFilter] = useState<string>("Location");
+  const [currentFilter] = useState<string>("Location");
   return (
     <div className={Styles.modal_bg}>
       <div className={Styles.container}>
@@ -59,7 +59,7 @@ const SearchModal = () => {
             )}
           </div>
           <div>
-            {currentFilter == "Location" && (
+            {currentFilter === "Location" && (
               <div className={Styles.guestFilter}>
                 <div className={Styles.guestFilterGroup}>
                   <h6>Adults</h6>
