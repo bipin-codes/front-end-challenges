@@ -14,10 +14,6 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
 
   return (
     <div className="Modal">
-      <button onClick={handleClose} className="close-btn">
-        Close
-      </button>
-
       <div className="modal-content">{children}</div>
     </div>
   );

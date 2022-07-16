@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/WindBnB/Header/Header";
 import Modal from "../../components/WindBnB/Modal/Modal";
 import Navbar from "../../components/WindBnB/Navbar/Navbar";
+import SearchModal from "../../components/WindBnB/SearchModal/SearchModal";
 import Stay from "../../components/WindBnB/type";
 import data from "../../stays.json";
 import styles from "./WindbNb.module.css";
@@ -50,9 +51,7 @@ const WindBnb = () => {
           }}
           isOpen={isOpen}
         >
-          <div className={styles.modal_bg}>
-            <h1>Hello World</h1>
-          </div>
+          <SearchModal />
         </Modal>
 
         {/* HEADER FOR CONTENT */}

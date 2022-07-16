@@ -1,0 +1,152 @@
+label {
+  margin: 0;
+}
+/* MODAL STYLING */
+.modal_bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.container {
+  height: 40%;
+  width: 100%;
+  background-color: white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.nav {
+  display: flex;
+
+  box-shadow: 0px 1px 6px #00000030;
+  border-radius: 16px;
+}
+.nav_filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  margin: 0 0.2rem;
+  flex: 1;
+  background: transparent;
+  border: none;
+}
+.nav_filter:active,
+.nav_filter:focus {
+  border-radius: 15px;
+  border-color: 1px solid black;
+}
+.nav_filter label:first-child {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.nav_filter label:nth-child(2) {
+  font-weight: 400;
+  font-size: 14px;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content div {
+  flex: 1;
+}
+
+/* LOCATION FILTER CONTENT */
+.locationFilter {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.locationFilter ul {
+  padding-left: 0px;
+  margin: 0.5rem;
+  list-style: none;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+.locationFilter li {
+  cursor: pointer;
+  margin: 1.2rem;
+}
+.locationFilter span {
+  color: #4f4f4f;
+  cursor: pointer;
+}
+.locationFilter label {
+  font-size: 14px;
+  font-weight: "400";
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.guestFilter {
+  align-self: flex-start;
+  /* flex: 1; */
+}
+/* GUEST  FILTER CONTENT */
+.guestFilterGroup {
+  margin: 2rem;
+}
+.guestFilterGroup h6 {
+  font-weight: bolder;
+  color: #333333;
+}
+.guestFilterGroup label {
+  color: #bdbdbd;
+}
+.guestFilterControl {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+}
+.guestFilterControl button {
+  background-color: transparent;
+  color: #828282;
+  border-radius: 5px;
+  border-color: #828282;
+  border-width: 0.5px;
+  height: 23px;
+  width: 23px;
+  font-size: 10px;
+}
+.guestFilterControl label {
+  margin: 0px 1rem;
+}
+
+.nav_search {
+  padding: 0.5rem 0;
+  color: #fff;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav_search > div {
+  background-color: #eb5757;
+  border-radius: 16px;
+  padding: 0.2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_search > div > span {
+  color: #fff;
+}
+.nav_search > div > label {
+  margin: 1rem;
+  font-size: 14px;
+}
+
+.v {
+  border-left: 3px solid #f2f2f2;
+  height: "100%";
+}
