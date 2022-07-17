@@ -1,18 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Styles from "./SearchModal.module.css";
 const SearchModal = () => {
-  const [currentFilter] = useState<string>("Location");
+  const [currentFilter, setCurrentFilter] = useState<string>("Location");
+
   return (
     <div className={Styles.modal_bg}>
       <div className={Styles.container}>
         <div className={Styles.nav}>
-          <button type="button" className={Styles.nav_filter}>
+          <button
+            autoFocus
+            type="button"
+            className={Styles.nav_filter}
+            onClick={() => {
+              setCurrentFilter("Location");
+            }}
+          >
             <label className={Styles.nav_item_title}>Location</label>
             <label className={Styles.nav_item_value}>Helsinki, Finland</label>
           </button>
           <div className={Styles.v}></div>
 
-          <button type="button" className={Styles.nav_filter}>
+          <button
+            type="button"
+            className={Styles.nav_filter}
+            onClick={() => {
+              setCurrentFilter("Guests");
+            }}
+          >
             <label className={Styles.nav_item_title}>Guests</label>
             <label className={Styles.nav_item_value}>Add Guests</label>
           </button>
@@ -59,7 +73,7 @@ const SearchModal = () => {
             )}
           </div>
           <div>
-            {currentFilter === "Location" && (
+            {currentFilter !== "Location" && (
               <div className={Styles.guestFilter}>
                 <div className={Styles.guestFilterGroup}>
                   <h6>Adults</h6>
