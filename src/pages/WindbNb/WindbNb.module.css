@@ -31,6 +31,13 @@ body {
 .parent_container {
   margin: 5rem;
 }
+.navbar_container {
+  position: "sticky";
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  padding: 2rem;
+}
 
 .card_image > img {
   border-radius: 25px;
@@ -92,5 +99,8 @@ body {
 @media only screen and (max-width: 500px) {
   .parent_container {
     margin: 1rem;
+  }
+  .navbar_container {
+    padding: 0.5rem;
   }
 }

@@ -39,15 +39,7 @@ const WindBnb = () => {
     <React.Fragment>
       <div className={styles.parent_container}>
         {/* NAVBAR */}
-        <div
-          style={{
-            position: "sticky",
-            width: "100%",
-            top: 0,
-            background: "#fff",
-            padding: "2rem",
-          }}
-        >
+        <div className={styles.navbar_container}>
           <Navbar
             clickHandler={() => {
               setIsOpen(true);
