@@ -53,7 +53,11 @@ const WindBnb = () => {
           }}
           isOpen={isOpen}
         >
-          <SearchModal />
+          <SearchModal
+            onSearchClick={() => {
+              setIsOpen(false);
+            }}
+          />
         </Modal>
 
         {/* HEADER FOR CONTENT */}

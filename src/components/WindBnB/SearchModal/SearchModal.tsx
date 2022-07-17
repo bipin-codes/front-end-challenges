@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Styles from "./SearchModal.module.css";
-const SearchModal = () => {
+const SearchModal: React.FC<{ onSearchClick: () => void }> = ({
+  onSearchClick,
+}) => {
   const [currentFilter, setCurrentFilter] = useState<string>("Location");
 
   return (
@@ -33,15 +35,13 @@ const SearchModal = () => {
           <div className={Styles.v}></div>
 
           <div className={Styles.nav_search}>
-            <div>
-              <span
-                className="material-icons icon"
-                onClick={() => {
-                  console.log("Search Clicked!");
-                }}
-              >
-                {"search"}
-              </span>
+            <div
+              onClick={() => {
+                onSearchClick();
+              }}
+              style={{ cursor: "pointer" }}
+            >
+              <span className="material-icons icon">{"search"}</span>
               <label>Search</label>
             </div>
           </div>
