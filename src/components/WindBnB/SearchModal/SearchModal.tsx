@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Styles from "./SearchModal.module.css";
 const SearchModal = () => {
   const [currentFilter, setCurrentFilter] = useState<string>("Location");

@@ -150,3 +150,22 @@ label {
   border-left: 3px solid #f2f2f2;
   height: "100%";
 }
+
+@media only screen and (max-width: 637px) {
+  .container {
+    height: 80%;
+    justify-content: flex-start;
+  }
+  .nav {
+    flex-direction: column;
+  }
+  .nav_search {
+    position: absolute;
+    bottom: 25%;
+    margin-left: 20%;
+  }
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
