@@ -1,4 +1,4 @@
-export default interface Stay {
+export interface Stay {
   beds: number;
   city: string;
   country: string;
@@ -8,4 +8,9 @@ export default interface Stay {
   superHost: boolean;
   title: string;
   type: string;
+}
+
+export interface Guests {
+  adults: number;
+  children: number;
 }

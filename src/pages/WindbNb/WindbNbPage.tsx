@@ -3,12 +3,26 @@ import Header from "../../components/WindBnB/Header/Header";
 import Modal from "../../components/WindBnB/Modal/Modal";
 import Navbar from "../../components/WindBnB/Navbar/Navbar";
 import SearchModal from "../../components/WindBnB/SearchModal/SearchModal";
-import Stay from "../../components/WindBnB/type";
+import { Guests, Stay } from "../../components/WindBnB/type";
 import data from "../../stays.json";
 import styles from "./WindbNb.module.css";
+
+const cities = [
+  "Helsinki, Finland",
+  "Turku, Finland",
+  "Oulu, Finland",
+  "Vaasa, Finland",
+];
+
 const WindBnb = () => {
-  const [stays] = useState<[Stay]>(data as [Stay]);
+  const [stays, setStays] = useState<Array<Stay>>(data as Array<Stay>);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const [city, setCity] = useState(cities[0]);
+  const [guests, setGuests] = useState<Guests>({
+    adults: 0,
+    children: 0,
+  });
 
   const renderStay = (stay: Stay, index: number) => {
     return (
@@ -41,6 +55,8 @@ const WindBnb = () => {
         {/* NAVBAR */}
         <div className={styles.navbar_container}>
           <Navbar
+            city={city}
+            guests={guests.adults + guests.children}
             clickHandler={() => {
               setIsOpen(true);
             }}
@@ -54,7 +70,22 @@ const WindBnb = () => {
           isOpen={isOpen}
         >
           <SearchModal
+            cities={cities}
+            city={city}
+            guests={guests}
+            onSetCity={(city: string) => setCity(city)}
+            onSetGuests={(guests: Guests) => {
+              setGuests(guests);
+            }}
             onSearchClick={() => {
+              setStays(
+                (data as Array<Stay>).filter((stay) => {
+                  return (
+                    stay.maxGuests >= guests.adults + guests.children &&
+                    stay.city === city.split(",")[0]
+                  );
+                })
+              );
               setIsOpen(false);
             }}
           />

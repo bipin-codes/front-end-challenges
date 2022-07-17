@@ -1,10 +1,28 @@
 import React, { useState } from "react";
+import { Guests } from "../type";
 import Styles from "./SearchModal.module.css";
-const SearchModal: React.FC<{ onSearchClick: () => void }> = ({
+
+interface SearchModalProps {
+  onSearchClick: () => void;
+
+  onSetCity: (city: string) => void;
+
+  onSetGuests: (guests: Guests) => void;
+
+  city: string;
+  guests: Guests;
+  cities: Array<string>;
+}
+
+const SearchModal: React.FC<SearchModalProps> = ({
   onSearchClick,
+  city,
+  guests,
+  onSetCity,
+  onSetGuests,
+  cities,
 }) => {
   const [currentFilter, setCurrentFilter] = useState<string>("Location");
-
   return (
     <div className={Styles.modal_bg}>
       <div className={Styles.container}>
@@ -18,7 +36,7 @@ const SearchModal: React.FC<{ onSearchClick: () => void }> = ({
             }}
           >
             <label className={Styles.nav_item_title}>Location</label>
-            <label className={Styles.nav_item_value}>Helsinki, Finland</label>
+            <label className={Styles.nav_item_value}>{city}</label>
           </button>
           <div className={Styles.v}></div>
 
@@ -30,7 +48,11 @@ const SearchModal: React.FC<{ onSearchClick: () => void }> = ({
             }}
           >
             <label className={Styles.nav_item_title}>Guests</label>
-            <label className={Styles.nav_item_value}>Add Guests</label>
+            <label className={Styles.nav_item_value}>
+              {guests.adults + guests.children === 0
+                ? "Add guests"
+                : guests.adults + guests.children}
+            </label>
           </button>
           <div className={Styles.v}></div>
 
@@ -52,22 +74,19 @@ const SearchModal: React.FC<{ onSearchClick: () => void }> = ({
             {currentFilter === "Location" && (
               <div className={Styles.locationFilter}>
                 <ul>
-                  <li>
-                    <span className="material-icons">{"pin_drop"}</span>
-                    <label>Helsinki, Finland</label>
-                  </li>
-                  <li>
-                    <span className="material-icons">{"pin_drop"}</span>
-                    <label>Turku, Finland</label>
-                  </li>
-                  <li>
-                    <span className="material-icons">{"pin_drop"}</span>
-                    <label>Oulu, Finland</label>
-                  </li>
-                  <li>
-                    <span className="material-icons">{"pin_drop"}</span>
-                    <label>Vaasa, Finland</label>
-                  </li>
+                  {cities.map((city) => {
+                    return (
+                      <li
+                        key={city}
+                        onClick={() => {
+                          onSetCity(city);
+                        }}
+                      >
+                        <span className="material-icons">{"pin_drop"}</span>
+                        <label>{city}</label>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             )}
@@ -79,18 +98,52 @@ const SearchModal: React.FC<{ onSearchClick: () => void }> = ({
                   <h6>Adults</h6>
                   <label>Ages 13 or above</label>
                   <div className={Styles.guestFilterControl}>
-                    <button> - </button>
-                    <label> 0 </label>
-                    <button> + </button>
+                    <button
+                      onClick={() => {
+                        onSetGuests({
+                          ...guests,
+                          adults: guests.adults - 1 < 0 ? 0 : guests.adults - 1,
+                        });
+                      }}
+                    >
+                      -
+                    </button>
+                    <label> {guests.adults} </label>
+                    <button
+                      onClick={() => {
+                        onSetGuests({ ...guests, adults: guests.adults + 1 });
+                      }}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
                 <div className={Styles.guestFilterGroup}>
                   <h6>Children</h6>
                   <label>Ages 2 - 12</label>
                   <div className={Styles.guestFilterControl}>
-                    <button>-</button>
-                    <label>0</label>
-                    <button>+</button>
+                    <button
+                      onClick={() => {
+                        onSetGuests({
+                          ...guests,
+                          children:
+                            guests.children - 1 < 0 ? 0 : guests.children - 1,
+                        });
+                      }}
+                    >
+                      -
+                    </button>
+                    <label>{guests.children}</label>
+                    <button
+                      onClick={() => {
+                        onSetGuests({
+                          ...guests,
+                          children: guests.children + 1,
+                        });
+                      }}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               </div>

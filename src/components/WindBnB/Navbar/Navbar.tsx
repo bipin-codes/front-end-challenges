@@ -1,10 +1,12 @@
-import React, { useState, FC } from "react";
+import React, { FC } from "react";
 import logo from "../../../assets/images/logo.png";
-import "./Navbar.css";
-const Navbar: FC<{ clickHandler: () => void }> = ({ clickHandler }) => {
-  const [guests] = useState(undefined);
-  const [location] = useState("Helsinki, Finland");
 
+import "./Navbar.css";
+const Navbar: FC<{
+  clickHandler: () => void;
+  guests: number;
+  city: string;
+}> = ({ clickHandler, city, guests }) => {
   return (
     <nav className="navbar_container">
       <div className="navbar_container_left">
@@ -19,7 +21,7 @@ const Navbar: FC<{ clickHandler: () => void }> = ({ clickHandler }) => {
             type="search"
             placeholder="Search"
             className="search-box"
-            value={location}
+            value={city}
           />
           <div className="vl"></div>
           <input
@@ -27,7 +29,7 @@ const Navbar: FC<{ clickHandler: () => void }> = ({ clickHandler }) => {
             type="search"
             placeholder="Add guests"
             className="search-box search-box-bordered"
-            value={guests}
+            value={guests === 0 ? "Add guests" : guests}
           />
           <div className="vl"></div>
 
