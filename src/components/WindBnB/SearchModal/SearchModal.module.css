@@ -155,6 +155,12 @@ label {
   .container {
     padding: 1rem;
   }
+  .nav_search > div {
+    padding: 0.1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width: 637px) {
