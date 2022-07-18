@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ButtonPage } from "./pages/Buttons/ButtonPage";
 import { Index } from "./pages/Index";
 import { InputPage } from "./pages/Input/InputPage";
+import TodoPage from "./pages/Todo/TodoPage";
 import WindBnb from "./pages/WindbNb/WindbNbPage";
 export const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ export const App: React.FC = () => {
         <Route path="/button" element={<ButtonPage />} />
         <Route path="/input" element={<InputPage />} />
         <Route path="/windbnb" element={<WindBnb />} />
+        <Route path="/todo" element={<TodoPage />} />
       </Routes>
     </BrowserRouter>
   );
