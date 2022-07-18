@@ -1,0 +1,14 @@
+.td_outer_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5rem;
+}
+.tabs {
+  display: flex;
+  background-color: aqua;
+
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
