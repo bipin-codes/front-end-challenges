@@ -1,0 +1,24 @@
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tab_group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  border-bottom: solid 3px rgb(170, 169, 169);
+}
+
+.tabTitle {
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.tab_fancy {
+  border-top: solid 5px rgb(61, 46, 225);
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}

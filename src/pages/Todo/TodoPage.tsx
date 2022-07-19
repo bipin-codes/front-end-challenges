@@ -1,5 +1,6 @@
 import React from "react";
-import Tab from "../../components/Todo/Tab/Tabs";
+import Tabs from "../../components/Todo/Tabs/Tabs";
+import TabsContent from "../../components/Todo/TabsContent/TabsContent";
 import Styles from "./Todo.module.css";
 const TodoPage = () => {
   return (
@@ -9,7 +10,10 @@ const TodoPage = () => {
       </div>
 
       <div className={Styles.tabs}>
-        <Tab></Tab>
+        {/* Whole Tab Group */}
+        <Tabs>
+          <TabsContent />
+        </Tabs>
       </div>
     </div>
   );
