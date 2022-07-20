@@ -1,0 +1,41 @@
+.input {
+  border-radius: 12px;
+  border-color: #bdbdbd;
+  padding: 1rem;
+  width: 70%;
+  border-width: 1px;
+}
+.button_style {
+  width: 23%;
+  background-color: #2f80ed;
+  border-radius: 12px;
+  border: solid 1px #bdbdbd;
+  padding: 1rem;
+  color: white;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.todoListing {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0;
+}
+.checkbox {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background-color: #2f80ed;
+  accent-color: #2f80ed;
+}
+.remove_outline {
+  outline: none;
+  border: none;
+}
