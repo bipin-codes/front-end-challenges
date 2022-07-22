@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import Tabs from "../../components/Todo/Tabs/Tabs";
 import TabsContent from "../../components/Todo/TabsContent/TabsContent";
 import Styles from "./Todo.module.css";
+import { ToDo } from "./type";
 
-const getRelativeTodos = (
-  currentTab: string,
-  todos: Array<{ title: string; completed: boolean; id: number }>
-) => {
+const getRelativeTodos = (currentTab: string, todos: Array<ToDo>) => {
   if (currentTab === "All") return todos;
   if (currentTab === "Active") return todos.filter((x) => !x.completed);
   return todos.filter((x) => x.completed);
 };
 
 const TodoPage = () => {
-  const [todos, setTodos] = useState<
-    Array<{ title: string; completed: boolean; id: number }>
-  >([]);
+  const [todos, setTodos] = useState<Array<ToDo>>([]);
   const [currentTab, setCurrentTab] = useState("All");
   return (
     <div className={Styles.td_outer_div}>

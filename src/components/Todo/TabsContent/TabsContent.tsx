@@ -1,9 +1,10 @@
 import React, { PropsWithChildren, useState } from "react";
+import { ToDo } from "../../../pages/Todo/type";
 import Styles from "./TabsContent.module.css";
 
 interface TabsContentProps {
   // We could've obviously created a type in a separate file for it had this been a bigger project
-  todos: Array<{ title: string; completed: boolean; id: number }>;
+  todos: Array<ToDo>;
   currentTab: string;
   onAddTask: (task: string) => void;
   onChangeStatus: (id: number) => void;

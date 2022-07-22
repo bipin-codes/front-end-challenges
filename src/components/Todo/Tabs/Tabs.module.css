@@ -21,3 +21,17 @@
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
+
+@media only screen and (max-width: 500px) {
+  .tabTitle {
+    padding: 0.5rem 2rem;
+  }
+  .tab_group {
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .tab_container {
+    width: 100vh;
+    display: block;
+  }
+}
