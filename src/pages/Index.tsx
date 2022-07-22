@@ -62,7 +62,7 @@ export const Index: React.FC = () => {
         <div className="row g-4">
           {challenges.map((challenge, index) => {
             return (
-              <div className="col-md-5 m-5" key={index}>
+              <div className="col-md-5 m-4" key={index}>
                 <div className="card">
                   <div className="card-body">
                     <h5 className="card-title">{challenge.label}</h5>
