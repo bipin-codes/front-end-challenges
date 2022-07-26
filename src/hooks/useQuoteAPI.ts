@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Quote } from "../pages/Quote/type";
 
 interface useQuoteProps {
@@ -7,12 +7,12 @@ interface useQuoteProps {
 
 const useQuoteAPI = (
   props: useQuoteProps
-): { loading: boolean; data: Array<Quote> | null } => {
-  console.log(props.url);
-  const [loading, setLoading] = useState(true);
+): { loading: boolean; data: Array<Quote> | null; toFetch: any } => {
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState<Array<Quote> | null>(null);
 
-  useEffect(() => {
+  const toFetch = useCallback(() => {
+    setLoading(true);
     const fetchAPI = async () => {
       try {
         let response = await fetch(props.url);
@@ -26,6 +26,6 @@ const useQuoteAPI = (
     fetchAPI();
   }, [props.url]);
 
-  return { loading, data };
+  return { loading, toFetch, data };
 };
 export default useQuoteAPI;
