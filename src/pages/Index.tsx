@@ -26,6 +26,11 @@ export const Index: React.FC = () => {
       path: "/todo",
       description: "Create a todo app following given designs. ",
     },
+    {
+      label: "Quote Generator Challenge",
+      path: "/quote",
+      description: "Create a random Quote Generator. ",
+    },
   ];
 
   return (

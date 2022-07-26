@@ -3,8 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ButtonPage } from "./pages/Buttons/ButtonPage";
 import { Index } from "./pages/Index";
 import { InputPage } from "./pages/Input/InputPage";
+import { QuotePage } from "./pages/Quote/QuotePage";
 import TodoPage from "./pages/Todo/TodoPage";
 import WindBnb from "./pages/WindbNb/WindbNbPage";
+
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -14,6 +16,7 @@ export const App: React.FC = () => {
         <Route path="/input" element={<InputPage />} />
         <Route path="/windbnb" element={<WindBnb />} />
         <Route path="/todo" element={<TodoPage />} />
+        <Route path="/quote" element={<QuotePage />} />
       </Routes>
     </BrowserRouter>
   );

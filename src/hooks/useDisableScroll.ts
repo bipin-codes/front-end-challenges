@@ -1,8 +1,10 @@
-import { FC, useEffect } from "react";
-const useDisableScroll: FC<{ isOpen: boolean }> = ({ isOpen }): null => {
+import { useEffect } from "react";
+interface DisableScroll {
+  isOpen: boolean;
+}
+const useDisableScroll = (props: DisableScroll) => {
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
-  }, [isOpen]);
-  return null;
+    document.body.style.overflow = props.isOpen ? "hidden" : "unset";
+  }, [props.isOpen]);
 };
 export default useDisableScroll;
