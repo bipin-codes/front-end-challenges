@@ -28,12 +28,50 @@
   font-weight: bold;
   padding: 0rem 5rem;
 }
-.content h3 {
-  align-self: flex-start;
-  padding: 0rem 5rem;
+.content-sub {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem 5rem;
+  padding: 0.5rem;
 }
-.content h4 {
+.content-sub:hover {
+  background-color: rgb(79, 79, 79);
+  color: #fff;
+}
+.content-sub h3 {
   align-self: flex-start;
-  color: grey;
-  padding: 0rem 5rem;
+}
+.hide {
+  color: #fff;
+}
+.content-sub h5 {
+  align-self: flex-start;
+  color: rgb(42, 42, 42);
+}
+
+@media only screen and (max-width: 1300px) {
+  .content {
+    padding: 5rem;
+    margin: 5rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .content {
+    padding: 48% 0;
+    margin: 0rem;
+  }
+  .content p {
+    padding: 0.5rem;
+  }
+  .content-sub {
+    padding: 0;
+    margin: 0;
+  }
+  .root-container {
+    padding: 1rem;
+  }
 }

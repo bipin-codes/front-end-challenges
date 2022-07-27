@@ -27,8 +27,17 @@ export const QuotePage: React.FC = () => {
             data && (
               <>
                 <p>"{data[0].quoteText}"</p>
-                <h3>{data[0].quoteAuthor}</h3>
-                <h4>{data[0].quoteGenre}</h4>
+                <div className="content-sub">
+                  <div>
+                    <h3>{data[0].quoteAuthor}</h3>
+                    <h5>{data[0].quoteGenre}</h5>
+                  </div>
+                  <div>
+                    <span className={"material-icons hide"}>
+                      {"arrow_right_alt"}
+                    </span>
+                  </div>
+                </div>
               </>
             )
           )}
