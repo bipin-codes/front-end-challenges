@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import useQuoteAPI from "../../hooks/useQuoteAPI";
 import "./Quote.css";
 
 export const QuotePage: React.FC = () => {
+  const navigate = useNavigate();
   const { loading, toFetch, data } = useQuoteAPI({
     url: "https://quote-garden.herokuapp.com/api/v3/quotes/random",
   });
@@ -10,6 +12,10 @@ export const QuotePage: React.FC = () => {
   useEffect(() => {
     toFetch();
   }, [toFetch]);
+
+  const clickOnAuthor = (authorName: string) => {
+    navigate(`/quote/${authorName}`);
+  };
 
   return (
     <React.Fragment>
@@ -27,7 +33,12 @@ export const QuotePage: React.FC = () => {
             data && (
               <>
                 <p>"{data[0].quoteText}"</p>
-                <div className="content-sub">
+                <div
+                  className="content-sub"
+                  onClick={() => {
+                    clickOnAuthor(data[0].quoteAuthor);
+                  }}
+                >
                   <div>
                     <h3>{data[0].quoteAuthor}</h3>
                     <h5>{data[0].quoteGenre}</h5>
