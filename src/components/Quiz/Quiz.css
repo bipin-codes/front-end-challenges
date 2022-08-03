@@ -1,0 +1,32 @@
+.quiz-body {
+  margin-top: -100px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.quiz-body ol {
+  width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: upper-alpha;
+  list-style-position: inside;
+}
+
+.li-item {
+  color: #6066d0cc;
+  width: 100%;
+  border: 2px solid #6066d0b2;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  font-size: 18px;
+  cursor: grab;
+}
+.li-item span {
+  color: #6066d0cc;
+  font-size: 18px;
+}
+.li-item:hover {
+  background-color: #f9a826;
+  color: white;
+}

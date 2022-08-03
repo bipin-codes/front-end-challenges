@@ -31,6 +31,11 @@ export const Index: React.FC = () => {
       path: "/quote",
       description: "Create a random Quote Generator. ",
     },
+    {
+      label: "Country Quiz Challenge",
+      path: "/country",
+      description: "Create a country quiz app using an API.",
+    },
   ];
 
   return (
@@ -49,7 +54,7 @@ export const Index: React.FC = () => {
             target={"_blank"}
           >
             devchallenges.io
-          </a>{" "}
+          </a>
           to host these challenges.
         </p>
         <h4 className="m-5">
