@@ -17,20 +17,3 @@
 .quiz-container-header {
   color: white;
 }
-
-.quiz-container-body img {
-  position: relative;
-  top: -175px;
-  right: -260px;
-  height: 116px;
-  width: 162px;
-}
-.quiz-container-body {
-  background-color: white;
-  border-radius: 25px;
-  padding: 5rem 3rem;
-}
-.quiz-container-body h3 {
-  color: #2f527b;
-  font-weight: 700;
-}

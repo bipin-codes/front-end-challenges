@@ -9,9 +9,7 @@ const CountryPage = () => {
           <div className="quiz-container-header">
             <h1>COUNTRY QUIZ</h1>
           </div>
-          <div className="quiz-container-body">
-            <Quiz />
-          </div>
+          <Quiz />
         </div>
       </div>
     </div>
