@@ -3,8 +3,10 @@
   background-position: center;
   background-origin: content-box;
   background-size: cover;
-  height: 100vh;
+  background-repeat: repeat-y;
   width: 100vw;
+  height: 100vh;
+  min-height: 896px;
 }
 
 .container {
