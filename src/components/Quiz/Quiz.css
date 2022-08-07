@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+  min-width: 520px;
 }
 .quiz-body ol {
   width: 100%;
@@ -67,6 +68,11 @@
   background-color: #60bf88;
   color: white;
 }
+@media only screen and (max-width: 768px) {
+  .quiz-body {
+    min-width: 410px;
+  }
+}
 
 @media only screen and (max-width: 540px) {
   .header-image {
@@ -88,5 +94,8 @@
     justify-content: space-evenly;
     margin: 1rem 0rem;
     padding: 3rem 1rem;
+  }
+  .quiz-body {
+    min-width: 250px;
   }
 }

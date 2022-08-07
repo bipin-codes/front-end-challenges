@@ -22,7 +22,7 @@ const CountryPage = () => {
     },
     {
       image: "",
-      question: "New Delhi is capitla of",
+      question: "New Delhi is capital of",
       options: ["Sweden", "Indonesia", "Pakistan", "India"],
       correntAnswer: "India",
     },
@@ -34,7 +34,7 @@ const CountryPage = () => {
     },
     {
       image: "",
-      question: "Kuala Lumpur is capitla of",
+      question: "Kuala Lumpur is capital of",
       options: ["Malaysia", "China", "Africa", "India"],
       correntAnswer: "Malaysia",
     },
@@ -42,7 +42,7 @@ const CountryPage = () => {
 
   return (
     <div className="root-page">
-      <div style={{ position: "fixed", width: "100vw" }}>
+      <div style={{ width: "100vw" }}>
         <h6
           style={{
             textAlign: "center",
@@ -55,7 +55,7 @@ const CountryPage = () => {
         </h6>
       </div>
       <div className="container">
-        <div className="quiz-container">
+        <div>
           <div className="quiz-container-header">
             <h1>COUNTRY QUIZ</h1>
           </div>

@@ -5,8 +5,7 @@
   background-size: cover;
   background-repeat: repeat-y;
   width: 100vw;
-  height: 100vh;
-  min-height: 896px;
+  min-height: 100vh;
 }
 
 .container {
@@ -14,6 +13,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin-top: 5rem;
 }
 
 .quiz-container-header {
