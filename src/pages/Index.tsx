@@ -36,6 +36,11 @@ export const Index: React.FC = () => {
       path: "/country",
       description: "Create a country quiz app using an API.",
     },
+    {
+      label: "Weather App",
+      path: "/weather",
+      description: "Create weather app using an weather API.",
+    },
   ];
 
   return (
@@ -43,11 +48,11 @@ export const Index: React.FC = () => {
       <div className="d-flex flex-column p-5 align-items-center">
         <h1>Welcome to Front end challenges</h1>
         <p className="text-sm-start m-2">
-          These challenges are done with sole purpose of improving{" "}
+          These challenges are done with sole purpose of improving
           <span className="text-warning">Front end skills in React JS</span>.
         </p>
         <p>
-          Thanks to{" "}
+          Thanks to
           <a
             rel="noreferrer"
             href="https://devchallenges.io/"
@@ -58,7 +63,7 @@ export const Index: React.FC = () => {
           to host these challenges.
         </p>
         <h4 className="m-5">
-          You can find repository to project{" "}
+          You can find repository to project
           <a
             rel="noreferrer"
             href="https://github.com/bipin-codes/front-end-challenges"
