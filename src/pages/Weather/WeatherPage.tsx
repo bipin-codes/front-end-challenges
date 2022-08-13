@@ -3,13 +3,14 @@ import "./Weather.css";
 const WeatherPage = () => {
   return (
     <div className="weather-root">
-      <div className="cloud">
-        <img
-          src={require("../../assets/images/cloud-collection.png")}
-          alt="clouds"
-        />
-      </div>
       <div className="left-panel">
+        <div className="cloud">
+          <img
+            className="resp"
+            src={require("../../assets/images/cloud-collection.png")}
+            alt="clouds"
+          />
+        </div>
         <div className="left-panel-header">
           <input type="text" placeholder="Search for places" />
           <button type="button">
