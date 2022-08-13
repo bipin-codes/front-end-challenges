@@ -63,7 +63,7 @@ export const Index: React.FC = () => {
           to host these challenges.
         </p>
         <h4 className="m-5">
-          You can find repository to project
+          You can find repository to project &nbsp;
           <a
             rel="noreferrer"
             href="https://github.com/bipin-codes/front-end-challenges"

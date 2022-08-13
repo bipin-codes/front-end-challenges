@@ -2,12 +2,13 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  background-color: #1e213a;
+  font-family: "Raleway";
 }
 
 .left-panel {
-  flex-grow: 1.3;
+  flex-grow: 3;
 
-  background-color: #1e213a;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -24,6 +25,7 @@
   padding: 2em 0;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   flex-grow: 2;
 }
 .left-panel-header input {
@@ -33,7 +35,6 @@
   border: none;
   padding: 0.5rem;
   color: white;
-  align-self: flex-start;
 }
 .left-panel-header input::placeholder {
   color: white;
@@ -96,7 +97,115 @@
 }
 
 .right-panel {
+  padding: 2rem;
+
   z-index: 2;
-  flex-grow: 8.7;
-  background-color: brown;
+  flex-grow: 7;
+  background-color: #100e1d;
+}
+.right-panel-header {
+  padding: 2rem 8rem;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 2;
+}
+
+.circle-button {
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  background-color: #585676;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin: 0 0.5rem;
+}
+.circle-button:focus {
+  outline: none;
+  background-color: #e7e7eb;
+  color: #110e3c;
+}
+.right-panel-header span {
+  font-weight: 600;
+}
+.right-panel-body {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 4rem;
+  color: white;
+}
+.right-panel-body h4 {
+  margin: 2rem 5rem;
+}
+.rp-body-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.weather-card {
+  color: #fff;
+  background-color: #1e213a;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.weather-card img {
+  width: 100px;
+  height: 100px;
+}
+.weather-card div {
+  margin-top: 2rem;
+}
+.weather-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  padding: 1rem 5rem;
+}
+.percentage {
+  color: white;
+}
+.percentage-value {
+  font-size: 65px;
+  font-weight: 700;
+  font-style: normal;
+}
+.percentage-symbol {
+  font-size: 30px;
+  font-style: normal;
+}
+
+.weather-grid-item {
+  background-color: #1e213a;
+
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 1rem 5rem;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.humidity {
+  font-size: 12px;
+  color: #a09fb1;
+}
+.humidity div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bar {
+  margin-top: 5px;
+  height: 8px;
+  background-color: #ffec65;
+  width: 84%;
+  border-radius: 30px;
 }

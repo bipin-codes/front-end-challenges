@@ -13,7 +13,10 @@ export const InputPage: React.FC = () => {
         <div className="section-div" style={{ gridRowStart: 1 }}>
           <div className="row-div">
             <div>
-              <span style={{ marginBottom: 0, display: "block" }}>
+              <span
+                className="span"
+                style={{ marginBottom: 0, display: "block" }}
+              >
                 {"<Input />"}
               </span>
               <br />
@@ -26,7 +29,7 @@ export const InputPage: React.FC = () => {
         <div className="section-div " style={{ gridRowStart: 2 }}>
           <div className="row-div">
             <div>
-              <span>{"<Input error/>"}</span>
+              <span className="span">{"<Input error/>"}</span>
               <br />
               <Input error />
             </div>
@@ -37,7 +40,10 @@ export const InputPage: React.FC = () => {
         <div className="section-div " style={{ gridRowStart: 3 }}>
           <div className="row-div">
             <div>
-              <span style={{ marginBottom: 0, display: "block" }}>
+              <span
+                className="span"
+                style={{ marginBottom: 0, display: "block" }}
+              >
                 {"<Input disabled/>"}
               </span>
               <br />
@@ -49,7 +55,9 @@ export const InputPage: React.FC = () => {
         <div className="section-div" style={{ gridRowStart: 4 }}>
           <div className="row-div">
             <div>
-              <span>{"<Input helperText='Some Helper Text'/>"}</span>
+              <span className="span">
+                {"<Input helperText='Some Helper Text'/>"}
+              </span>
               <Input helperText="Some helper text" />
             </div>
             <div>
@@ -63,11 +71,11 @@ export const InputPage: React.FC = () => {
         <div className="section-div" style={{ gridRowStart: 5 }}>
           <div className="row-div">
             <div>
-              <span>{"<Input startIcon=''"}</span>
+              <span className="span">{"<Input startIcon=''"}</span>
               <Input startIcon="call" />
             </div>
             <div>
-              <span>{"<Input endIcon=''/>"}</span>
+              <span className="span">{"<Input endIcon=''/>"}</span>
               <Input endIcon="lock" />
             </div>
           </div>
@@ -77,7 +85,7 @@ export const InputPage: React.FC = () => {
         <div className="section-div" style={{ gridRowStart: 6 }}>
           <div className="row-div">
             <div>
-              <span>{"<Input text='Some Text'"}</span>
+              <span className="span">{"<Input text='Some Text'"}</span>
               <Input text="Some Text" />
             </div>
           </div>
@@ -87,11 +95,11 @@ export const InputPage: React.FC = () => {
         <div className="section-div" style={{ gridRowStart: 7 }}>
           <div className="row-div">
             <div>
-              <span>{"<Input size = 'sm'> "}</span>
+              <span className="span">{"<Input size = 'sm'> "}</span>
               <Input size="sm" />
             </div>
             <div>
-              <span>{"<Input size = 'md'> "}</span>
+              <span className="span">{"<Input size = 'md'> "}</span>
               <Input size="md" />
             </div>
           </div>
@@ -101,7 +109,7 @@ export const InputPage: React.FC = () => {
         <div className="section-div" style={{ gridRowStart: 8 }}>
           <div className="row-div">
             <div style={{ width: "100%" }}>
-              <span>{"<Input fullWidth> "}</span>
+              <span className="span">{"<Input fullWidth> "}</span>
               <Input fullWidth />
             </div>
           </div>
@@ -110,7 +118,7 @@ export const InputPage: React.FC = () => {
         <div className="section-div" style={{ gridRowStart: 9 }}>
           <div className="row-div">
             <div style={{ width: "100%" }}>
-              <span>{"<Input multiline rows = 3> "}</span>
+              <span className="span">{"<Input multiline rows = 3> "}</span>
               <Input startIcon="" multiline rows={3} />
             </div>
           </div>
