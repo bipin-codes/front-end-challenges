@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useQuoteAPI from "../../../hooks/useQuoteAPI";
+import useAPI from "../../../hooks/useQuoteAPI";
 import "./QuoteList.css";
 const QuoteList = () => {
   const { id } = useParams();
-  const { toFetch, data, loading } = useQuoteAPI({
+  const { toFetch, data, loading } = useAPI({
     url: `https://quote-garden.herokuapp.com/api/v3/quotes?author=${id}`,
   });
 

@@ -1,12 +1,12 @@
 import { useCallback, useState } from "react";
 import { Quote } from "../pages/Quote/type";
 
-interface useQuoteProps {
+interface ServiceProps {
   url: string;
 }
 
-const useQuoteAPI = (
-  props: useQuoteProps
+const useAPI = (
+  props: ServiceProps
 ): { loading: boolean; data: Array<Quote> | null; toFetch: any } => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<Array<Quote> | null>(null);
@@ -28,4 +28,4 @@ const useQuoteAPI = (
 
   return { loading, toFetch, data };
 };
-export default useQuoteAPI;
+export default useAPI;

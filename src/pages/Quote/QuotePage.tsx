@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useQuoteAPI from "../../hooks/useQuoteAPI";
+import useAPI from "../../hooks/useQuoteAPI";
 import "./Quote.css";
 
 export const QuotePage: React.FC = () => {
   const navigate = useNavigate();
-  const { loading, toFetch, data } = useQuoteAPI({
+  const { loading, toFetch, data } = useAPI({
     url: "https://quote-garden.herokuapp.com/api/v3/quotes/random",
   });
 

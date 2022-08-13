@@ -170,7 +170,7 @@
 .weather-grid {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 1rem;
+  gap: 4rem;
 }
 .percentage {
   color: white;

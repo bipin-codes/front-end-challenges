@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Weather.css";
 const WeatherPage = () => {
+  // const { toFetch, data, loading } = useAPI({
+  //   url: `https://quote-garden.herokuapp.com/api/v3/quotes?author=${id}`,
+  // });
+
+  const getUserLocation = async () => {
+    if (navigator.geolocation) {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+        console.log(result);
+      });
+    } else {
+      alert("Sorry");
+    }
+  };
+
+  useEffect(() => {
+    getUserLocation();
+  });
+
   return (
     <div className="weather-root">
       <div className="left-panel">
