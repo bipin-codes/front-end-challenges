@@ -7,7 +7,6 @@ const useUserLocation = () => {
   );
 
   const success = (pos: GeolocationPosition) => {
-    console.log(pos);
     setData(pos);
   };
 

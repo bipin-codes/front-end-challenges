@@ -46,7 +46,6 @@ export const Index: React.FC = () => {
           These challenges are done with sole purpose of improving
           <span className="text-warning">Front end skills in React JS</span>.
         </p>
-        <h1>WEATHER APP | GITHUB JOBS ARE UPLOADED SEPARATELY</h1>
         <p>
           Thanks to
           <a
