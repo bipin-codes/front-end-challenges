@@ -7,7 +7,6 @@ import { InputPage } from "./pages/Input/InputPage";
 import QuoteList from "./pages/Quote/QuoteList/QuoteList";
 import { QuotePage } from "./pages/Quote/QuotePage";
 import TodoPage from "./pages/Todo/TodoPage";
-import WeatherPage from "./pages/Weather/WeatherPage";
 import WindBnb from "./pages/WindbNb/WindbNbPage";
 
 export const App: React.FC = () => {
@@ -23,7 +22,6 @@ export const App: React.FC = () => {
         <Route path="/quote" element={<QuotePage />}></Route>
         <Route path="/quote/:id" element={<QuoteList />}></Route>
         <Route path="/country" element={<CountryPage />}></Route>
-        <Route path="/weather" element={<WeatherPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
