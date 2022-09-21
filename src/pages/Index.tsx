@@ -36,6 +36,11 @@ export const Index: React.FC = () => {
       path: "/country",
       description: "Create a country quiz app using an API.",
     },
+    {
+      label: "Weather App Challenge",
+      path: "/weather",
+      description: "Weather App using Weather API.",
+    },
   ];
 
   return (
