@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useState } from "react";
 import { ToDo } from "../../../pages/Todo/type";
-import Styles from "./TabsContent.module.css";
+import "./TabsContent.css";
 
 interface TabsContentProps {
   // We could've obviously created a type in a separate file for it had this been a bigger project
@@ -23,18 +23,18 @@ const TabsContent: React.FC<PropsWithChildren<TabsContentProps>> = ({
   return (
     <>
       {currentTab !== "Completed" && (
-        <div className={Styles.tabs}>
+        <div className={"tabs"}>
           <input
             onChange={(val) => {
               setTask(val.target.value);
             }}
             placeholder="add details"
-            className={Styles.input}
+            className={"input"}
             value={task}
           ></input>
           <button
             type="button"
-            className={Styles.button_style}
+            className={"button_style"}
             onClick={() => {
               onAddTask(task);
               setTask("");
@@ -45,7 +45,7 @@ const TabsContent: React.FC<PropsWithChildren<TabsContentProps>> = ({
         </div>
       )}
 
-      <ul className={Styles.todoListing}>
+      <ul className={"todoListing"}>
         {todos.map((todo) => {
           return (
             <li
@@ -60,7 +60,7 @@ const TabsContent: React.FC<PropsWithChildren<TabsContentProps>> = ({
             >
               <input
                 type={"checkbox"}
-                className={Styles.checkbox}
+                className={"checkbox"}
                 checked={todo.completed}
                 onChange={() => {
                   onChangeStatus(todo.id);

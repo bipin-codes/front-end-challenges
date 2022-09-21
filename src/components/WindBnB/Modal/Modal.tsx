@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from "react";
 import useDisableScroll from "../../../hooks/useDisableScroll";
-
+import "./Modal.css";
 interface ModalProps {
   isOpen: boolean;
   handleClose: () => void;

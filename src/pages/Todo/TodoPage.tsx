@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Tabs from "../../components/Todo/Tabs/Tabs";
 import TabsContent from "../../components/Todo/TabsContent/TabsContent";
-import Styles from "./Todo.module.css";
+import "./Todo.css";
 import { ToDo } from "./type";
 
 const getRelativeTodos = (currentTab: string, todos: Array<ToDo>) => {
@@ -14,7 +14,7 @@ const TodoPage = () => {
   const [todos, setTodos] = useState<Array<ToDo>>([]);
   const [currentTab, setCurrentTab] = useState("All");
   return (
-    <div className={Styles.td_outer_div}>
+    <div className="td-outer-div">
       <div>
         <h1>#todo</h1>
       </div>

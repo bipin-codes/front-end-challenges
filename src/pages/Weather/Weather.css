@@ -8,7 +8,6 @@
 
 .left-panel {
   flex-grow: 3;
-
   display: flex;
   flex-direction: column;
   align-items: stretch;

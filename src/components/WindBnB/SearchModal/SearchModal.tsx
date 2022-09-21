@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Guests } from "../type";
-import Styles from "./SearchModal.module.css";
+import "./SearchModal.css";
 
 interface SearchModalProps {
   onSearchClick: () => void;
@@ -24,39 +24,39 @@ const SearchModal: React.FC<SearchModalProps> = ({
 }) => {
   const [currentFilter, setCurrentFilter] = useState<string>("Location");
   return (
-    <div className={Styles.modal_bg}>
-      <div className={Styles.container}>
-        <div className={Styles.nav}>
+    <div className={"modal_bg"}>
+      <div className={"container"}>
+        <div className={"nav"}>
           <button
             autoFocus
             type="button"
-            className={Styles.nav_filter}
+            className={"nav_filter"}
             onClick={() => {
               setCurrentFilter("Location");
             }}
           >
-            <label className={Styles.nav_item_title}>Location</label>
-            <label className={Styles.nav_item_value}>{city}</label>
+            <label className={"nav_item_title"}>Location</label>
+            <label className={"nav_item_value"}>{city}</label>
           </button>
-          <div className={Styles.v}></div>
+          <div className={"v"}></div>
 
           <button
             type="button"
-            className={Styles.nav_filter}
+            className={"nav_filter"}
             onClick={() => {
               setCurrentFilter("Guests");
             }}
           >
-            <label className={Styles.nav_item_title}>Guests</label>
-            <label className={Styles.nav_item_value}>
+            <label className={"nav_item_title"}>Guests</label>
+            <label className={"nav_item_value"}>
               {guests.adults + guests.children === 0
                 ? "Add guests"
                 : guests.adults + guests.children}
             </label>
           </button>
-          <div className={Styles.v}></div>
+          <div className={"v"}></div>
 
-          <div className={Styles.nav_search}>
+          <div className={"nav_search"}>
             <div
               onClick={() => {
                 onSearchClick();
@@ -69,10 +69,10 @@ const SearchModal: React.FC<SearchModalProps> = ({
           </div>
         </div>
 
-        <div className={Styles.content}>
+        <div className={"content"}>
           <div>
             {currentFilter === "Location" && (
-              <div className={Styles.locationFilter}>
+              <div className={"locationFilter"}>
                 <ul>
                   {cities.map((city) => {
                     return (
@@ -93,11 +93,11 @@ const SearchModal: React.FC<SearchModalProps> = ({
           </div>
           <div>
             {currentFilter !== "Location" && (
-              <div className={Styles.guestFilter}>
-                <div className={Styles.guestFilterGroup}>
+              <div className={"guestFilter"}>
+                <div className={"guestFilterGroup"}>
                   <h6>Adults</h6>
                   <label>Ages 13 or above</label>
-                  <div className={Styles.guestFilterControl}>
+                  <div className={"guestFilterControl"}>
                     <button
                       onClick={() => {
                         onSetGuests({
@@ -118,10 +118,10 @@ const SearchModal: React.FC<SearchModalProps> = ({
                     </button>
                   </div>
                 </div>
-                <div className={Styles.guestFilterGroup}>
+                <div className={"guestFilterGroup"}>
                   <h6>Children</h6>
                   <label>Ages 2 - 12</label>
-                  <div className={Styles.guestFilterControl}>
+                  <div className={"guestFilterControl"}>
                     <button
                       onClick={() => {
                         onSetGuests({
