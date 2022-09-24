@@ -9,7 +9,7 @@ const useWeatherAPI = (): {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<IWeather | null>(null);
   const baseURL = `https://api.openweathermap.org/data/2.5/forecast`;
-  const key = process.env.weather_key; //This should be put it env variable in production code.
+  const key = process.env.REACT_APP_weather_key; //This should be put it env variable in production code.
   const toFetch = useCallback(
     (lat: string, lng: string) => {
       setLoading(true);
@@ -19,7 +19,6 @@ const useWeatherAPI = (): {
             baseURL + `?lat=${lat}&lon=${lng}&appid=${key}&units=metric`;
           let response = await fetch(toCall);
           let data = await response.json();
-          console.log(data);
           setData(data);
         } catch (e) {
           console.log(e);

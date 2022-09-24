@@ -25,7 +25,7 @@ const WeatherPage = () => {
 
   useEffect(() => {
     if (!locationData) {
-      console.log("no data return");
+      // console.log("no data return");
       return;
     }
     fetchWeatherData(
@@ -122,41 +122,38 @@ const WeatherPage = () => {
           </div>
           <div className="right-panel-body">
             <div className="rp-body-top">
-              {weatherInfo?.list
-                .slice(3)
+              {weatherInfo?.list.slice(3).map((data, index) => {
+                return index === 0 || index % 8 === 0 ? (
+                  <div className="weather-card" key={index}>
+                    <h5>{getDate(data.dt_txt)}</h5>
+                    <img
+                      src={require("../../assets/images/Shower.png")}
+                      alt=""
+                    />
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-around",
+                        alignItems: "center",
+                      }}
+                    >
+                      {unit === "c" && (
+                        <h6>{temp(data.main.temp_max)}&#8451;</h6>
+                      )}
+                      {unit === "f" && (
+                        <h6>{temp(data.main.temp_max)}&#x2109;</h6>
+                      )}
 
-                .map((data, index) => {
-                  return index === 0 || index % 8 === 0 ? (
-                    <div className="weather-card">
-                      <h5>{getDate(data.dt_txt)}</h5>
-                      <img
-                        src={require("../../assets/images/Shower.png")}
-                        alt=""
-                      />
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-around",
-                          alignItems: "center",
-                        }}
-                      >
-                        {unit === "c" && (
-                          <h6>{temp(data.main.temp_max)}&#8451;</h6>
-                        )}
-                        {unit === "f" && (
-                          <h6>{temp(data.main.temp_max)}&#x2109;</h6>
-                        )}
-
-                        {unit === "c" && (
-                          <h6>{temp(data.main.temp_min)}&#8451;</h6>
-                        )}
-                        {unit === "f" && (
-                          <h6>{temp(data.main.temp_min)}&#x2109;</h6>
-                        )}
-                      </div>
+                      {unit === "c" && (
+                        <h6>{temp(data.main.temp_min)}&#8451;</h6>
+                      )}
+                      {unit === "f" && (
+                        <h6>{temp(data.main.temp_min)}&#x2109;</h6>
+                      )}
                     </div>
-                  ) : null;
-                })}
+                  </div>
+                ) : null;
+              })}
             </div>
             <h4>Today's Highlight</h4>
             <div className="weather-grid">
