@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 const useUserLocation = () => {
   const [data, setData] = useState<GeolocationPosition | undefined>(undefined);

@@ -65,7 +65,7 @@
 }
 
 .temp-value {
-  font-size: 144px;
+  font-size: 4rem;
   color: #e7e7eb;
 }
 .temp-sym {
@@ -207,7 +207,6 @@
   margin-top: 5px;
   height: 8px;
   background-color: #ffec65;
-  width: 84%;
   border-radius: 30px;
 }
 
