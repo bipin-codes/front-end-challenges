@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { SearchComponent } from "../../components/weather/SearchComponent";
 import useUserLocation from "../../hooks/useUserLocation";
 import useWeatherAPI from "../../hooks/useWeatherAPI";
 import { IWeather } from "../../types/Weather";
 import "./Weather.css";
+
 const WeatherPage = () => {
+  const [showSearchDiv, setShowSearchDiv] = useState(false);
   const [weatherInfo, setWeatherInfo] = useState<IWeather | null>(null);
   const [unit, setUnit] = useState<"c" | "f">("c");
   const {
@@ -35,6 +38,7 @@ const WeatherPage = () => {
   }, [locationData, fetchWeatherData]);
 
   useEffect(() => {
+    console.log(weatherData);
     setWeatherInfo(weatherData);
   }, [weatherData]);
 
@@ -52,54 +56,102 @@ const WeatherPage = () => {
     return value.toPrecision(2);
   };
 
+  const onShowSearchPress = () => {
+    setShowSearchDiv(true);
+  };
+  const onSearchPress = async (city: string) => {
+    if (!city) return;
+    try {
+      const data = await (
+        await fetch(
+          `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_weather_key}&units=metric`
+        )
+      ).json();
+
+      setWeatherInfo(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <div className="weather-root">
         <div className="left-panel">
-          <div className="cloud">
-            <img
-              className="resp"
-              src={require("../../assets/images/cloud-collection.png")}
-              alt="clouds"
+          {!showSearchDiv && (
+            <>
+              <div className="cloud">
+                <img
+                  className="resp"
+                  src={require("../../assets/images/cloud-collection.png")}
+                  alt="clouds"
+                />
+              </div>
+              <div className="left-panel-header">
+                <button
+                  type="button"
+                  style={{
+                    padding: "1rem",
+                    borderRadius: 0,
+                    color: "white",
+                    width: "161px",
+                    height: 19,
+                  }}
+                  onClick={onShowSearchPress}
+                >
+                  Search for places
+                </button>
+
+                <button type="button">
+                  <span className="material-icons">{"my_location"}</span>
+                </button>
+              </div>
+              <div className="left-panel-body">
+                <div className="left-panel-body-image">
+                  <img
+                    src={`${
+                      process.env.PUBLIC_URL
+                    }/images/${weatherInfo?.list[0].weather[0].main.replace(
+                      " ",
+                      "_"
+                    )}.png`}
+                    alt="shower"
+                  />
+                </div>
+                <div>
+                  <span className="temp-value">
+                    {temp(weatherInfo?.list[0]?.main.temp)}
+                  </span>
+                  {unit === "c" && <span className="temp-sym">&#8451; </span>}
+                  {unit === "f" && <span className="temp-sym">&#x2109; </span>}
+                </div>
+                <div>
+                  <span className="weather-words">
+                    {weatherInfo?.list[0]?.weather[0].description}
+                  </span>
+                </div>
+              </div>
+              <div className="left-panel-footer">
+                <div className="left-panel-footer-date">
+                  <span>Today</span>
+                  <span>.</span>
+                  <span>{getDate(weatherInfo?.list[0].dt_txt)}</span>
+                </div>
+                <div className="left-panel-footer-date">
+                  <span className="material-icons">{"location_on"}</span>
+                  <span>{weatherInfo?.city.name}</span>
+                </div>
+              </div>
+            </>
+          )}
+          {showSearchDiv && (
+            <SearchComponent
+              onCloseHandler={() => {
+                setShowSearchDiv(false);
+              }}
+              onSearchPressed={onSearchPress}
             />
-          </div>
-          <div className="left-panel-header">
-            <input type="text" placeholder="Search for places" />
-            <button type="button">
-              <span className="material-icons">{"my_location"}</span>
-            </button>
-          </div>
-          <div className="left-panel-body">
-            <div className="left-panel-body-image">
-              <img
-                src={require("../../assets/images/Shower.png")}
-                alt="shower"
-              />
-            </div>
-            <div>
-              <span className="temp-value">
-                {temp(weatherInfo?.list[0]?.main.temp)}
-              </span>
-              {unit === "c" && <span className="temp-sym">&#8451; </span>}
-              {unit === "f" && <span className="temp-sym">&#x2109; </span>}
-            </div>
-            <div>
-              <span className="weather-words">
-                {weatherInfo?.list[0]?.weather[0].description}
-              </span>
-            </div>
-          </div>
-          <div className="left-panel-footer">
-            <div className="left-panel-footer-date">
-              <span>Today</span>
-              <span>.</span>
-              <span>{getDate(weatherInfo?.list[0].dt_txt)}</span>
-            </div>
-            <div className="left-panel-footer-date">
-              <span className="material-icons">{"location_on"}</span>
-              <span>{weatherInfo?.city.name}</span>
-            </div>
-          </div>
+          )}
         </div>
         <div className="right-panel">
           <div className="right-panel-header">
@@ -122,13 +174,14 @@ const WeatherPage = () => {
           </div>
           <div className="right-panel-body">
             <div className="rp-body-top">
-              {weatherInfo?.list.slice(3).map((data, index) => {
+              {weatherInfo?.list.slice(6).map((data, index) => {
+                console.log(data.weather[0].main);
                 return index === 0 || index % 8 === 0 ? (
                   <div className="weather-card" key={index}>
                     <h5>{getDate(data.dt_txt)}</h5>
                     <img
-                      src={require("../../assets/images/Shower.png")}
-                      alt=""
+                      src={`${process.env.PUBLIC_URL}/images/${data.weather[0].main}.png`}
+                      alt="weather"
                     />
                     <div
                       style={{
