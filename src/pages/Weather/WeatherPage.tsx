@@ -53,7 +53,7 @@ const WeatherPage = () => {
     try {
       const data = await (
         await fetch(
-          `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_weather_key}&units=metric`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_weather_key}&units=metric`
         )
       ).json();
 
