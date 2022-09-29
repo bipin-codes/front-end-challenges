@@ -142,7 +142,9 @@ const WeatherPage = () => {
               onCloseHandler={() => {
                 setShowSearchDiv(false);
               }}
-              onSearchPressed={onSearchPress}
+              onSearchPressed={(city) => {
+                onSearchPress(city);
+              }}
             />
           )}
         </div>
