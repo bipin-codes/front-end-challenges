@@ -45,8 +45,8 @@ export const Index: React.FC = () => {
 
   return (
     <React.Fragment>
-      <div className="d-flex flex-column p-5 align-items-center">
-        <h1>Welcome to Front end challenges</h1>
+      <div className="d-flex flex-column p-3 align-items-center">
+        <h3>Front end challenges</h3>
         <p className="text-sm-start m-2">
           These challenges are done with sole purpose of improving
           <span className="text-warning"> Front end skills in React JS</span>.
@@ -73,11 +73,11 @@ export const Index: React.FC = () => {
           </a>
         </h4>
       </div>
-      <div className="container">
-        <div className="row g-4">
+      <div className="container p-1 mx-auto my-5">
+        <div className="row g-4 ">
           {challenges.map((challenge, index) => {
             return (
-              <div className="col-md-5 m-4" key={index}>
+              <div className="col-md-6 mb-4" key={index}>
                 <div className="card">
                   <div className="card-body">
                     <h5 className="card-title">{challenge.label}</h5>
