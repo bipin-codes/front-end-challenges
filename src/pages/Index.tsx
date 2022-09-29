@@ -44,32 +44,32 @@ export const Index: React.FC = () => {
   ];
 
   return (
-    <>
+    <React.Fragment>
       <div className="d-flex flex-column p-5 align-items-center">
         <h1>Welcome to Front end challenges</h1>
         <p className="text-sm-start m-2">
           These challenges are done with sole purpose of improving
-          <span className="text-warning">Front end skills in React JS</span>.
+          <span className="text-warning"> Front end skills in React JS</span>.
         </p>
         <p>
-          Thanks to
+          Thanks to{" "}
           <a
             rel="noreferrer"
             href="https://devchallenges.io/"
             target={"_blank"}
           >
-            devchallenges.io
+            <span> devchallenges.io </span>
           </a>
-          to host these challenges.
+          for hosting these challenges.
         </p>
-        <h4 className="m-5">
-          You can find repository to project &nbsp;
+        <h4 className="m-3">
+          You can find repository to project
           <a
             rel="noreferrer"
             href="https://github.com/bipin-codes/front-end-challenges"
             target={"_blank"}
           >
-            Front end challenges
+            <span> here</span>
           </a>
         </h4>
       </div>
@@ -90,6 +90,6 @@ export const Index: React.FC = () => {
           })}
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
