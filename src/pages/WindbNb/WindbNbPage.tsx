@@ -5,7 +5,7 @@ import Navbar from "../../components/WindBnB/Navbar/Navbar";
 import SearchModal from "../../components/WindBnB/SearchModal/SearchModal";
 import { Guests, Stay } from "../../components/WindBnB/type";
 import data from "../../stays.json";
-import styles from "./WindbNb.module.css";
+import "./WindbNb.css";
 
 const cities = [
   "Helsinki, Finland",
@@ -26,24 +26,24 @@ const WindBnb = () => {
 
   const renderStay = (stay: Stay, index: number) => {
     return (
-      <div key={index} className={styles.card}>
-        <div className={styles.card_image}>
+      <div key={index} className={"custom_card"}>
+        <div className={"custom_card_image"}>
           <img src={stay.photo} alt="" />
         </div>
-        <div className={styles.card_body}>
+        <div className={"card_body"}>
           {stay.superHost ? (
-            <span className={styles.card_tag}>Super Host</span>
+            <span className={"card_tag"}>Super Host</span>
           ) : null}
-          <span className={styles.card_detail}>
+          <span className={"card_detail"}>
             {stay.type}.{stay.beds}
           </span>
-          <span className={styles.card_rating}>
-            <span className={"material-icons " + styles.icon}>{"star"}</span>
+          <span className={"card_rating"}>
+            <span className={`material-icons icon`}>{"star"}</span>
             {stay.rating}
           </span>
         </div>
         <div>
-          <p className={styles.card_title}>{stay.title}</p>
+          <p className={"card_title"}>{stay.title}</p>
         </div>
       </div>
     );
@@ -51,9 +51,9 @@ const WindBnb = () => {
 
   return (
     <React.Fragment>
-      <div className={styles.parent_container}>
+      <div className={"parent_container"}>
         {/* NAVBAR */}
-        <div className={styles.navbar_container}>
+        <div className={"navbar_container"}>
           <Navbar
             city={city}
             guests={guests.adults + guests.children}
@@ -96,7 +96,7 @@ const WindBnb = () => {
 
         {/* PAGE CONTENT - LIST OF STAYS */}
 
-        <div className={styles.grid}>
+        <div className={"custom_grid"}>
           {stays.map((stay, index) => renderStay(stay, index))}
         </div>
       </div>

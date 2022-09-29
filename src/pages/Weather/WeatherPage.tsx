@@ -9,26 +9,16 @@ const WeatherPage = () => {
   const [showSearchDiv, setShowSearchDiv] = useState(false);
   const [weatherInfo, setWeatherInfo] = useState<IWeather | null>(null);
   const [unit, setUnit] = useState<"c" | "f">("c");
-  const {
-    getLocation,
-    data: locationData,
-    // error: locationError,
-  } = useUserLocation();
+  const { getLocation, data: locationData } = useUserLocation();
 
-  const {
-    toFetch: fetchWeatherData,
-    data: weatherData,
-    // loading: weatherDataLoading,
-  } = useWeatherAPI();
+  const { toFetch: fetchWeatherData, data: weatherData } = useWeatherAPI();
 
-  //fetches user location
   useEffect(() => {
     getLocation();
   }, [getLocation]);
 
   useEffect(() => {
     if (!locationData) {
-      // console.log("no data return");
       return;
     }
     fetchWeatherData(
@@ -38,7 +28,6 @@ const WeatherPage = () => {
   }, [locationData, fetchWeatherData]);
 
   useEffect(() => {
-    console.log(weatherData);
     setWeatherInfo(weatherData);
   }, [weatherData]);
 
@@ -68,12 +57,16 @@ const WeatherPage = () => {
         )
       ).json();
 
-      setWeatherInfo(data);
+      if (data.cod === "200") {
+        setWeatherInfo(data);
+        setShowSearchDiv(false);
+      } else {
+        alert("No such city found!");
+      }
     } catch (e) {
       console.log(e);
     }
   };
-
   return (
     <>
       <div className="weather-root">
@@ -175,7 +168,6 @@ const WeatherPage = () => {
           <div className="right-panel-body">
             <div className="rp-body-top">
               {weatherInfo?.list.slice(6).map((data, index) => {
-                console.log(data.weather[0].main);
                 return index === 0 || index % 8 === 0 ? (
                   <div className="weather-card" key={index}>
                     <h5>{getDate(data.dt_txt)}</h5>

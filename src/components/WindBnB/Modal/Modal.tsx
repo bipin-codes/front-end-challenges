@@ -16,8 +16,8 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="Modal">
-      <div className="modal-content">{children}</div>
+    <div className="custom_modal">
+      <div className="custom_modal_content">{children}</div>
     </div>
   );
 };

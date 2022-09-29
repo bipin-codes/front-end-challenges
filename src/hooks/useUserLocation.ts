@@ -16,25 +16,28 @@ const useUserLocation = () => {
   const getLocation = useCallback(() => {
     const fetchLocation = async () => {
       if (navigator.geolocation) {
-        const result = await navigator.permissions.query({
-          name: "geolocation",
-        });
-
-        if (result.state === "prompt") {
-          navigator.geolocation.getCurrentPosition(success, errors, {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0,
+        try {
+          const result = await navigator.permissions.query({
+            name: "geolocation",
           });
-        }
-        if (result.state === "granted") {
-          navigator.geolocation.getCurrentPosition(success);
-        }
-        if (result.state === "denied") {
-          alert("Please give location permission");
+          if (result.state === "prompt") {
+            navigator.geolocation.getCurrentPosition(success, errors, {
+              enableHighAccuracy: true,
+              timeout: 5000,
+              maximumAge: 0,
+            });
+          }
+          if (result.state === "granted") {
+            navigator.geolocation.getCurrentPosition(success);
+          }
+          if (result.state === "denied") {
+            alert("Please give location permission");
+          }
+        } catch (res) {
+          console.log(res);
         }
       } else {
-        alert("Sorry");
+        // alert("Sorry");
       }
     };
     fetchLocation();

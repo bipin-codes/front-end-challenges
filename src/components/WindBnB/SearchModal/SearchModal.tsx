@@ -25,7 +25,7 @@ const SearchModal: React.FC<SearchModalProps> = ({
   const [currentFilter, setCurrentFilter] = useState<string>("Location");
   return (
     <div className={"modal_bg"}>
-      <div className={"container"}>
+      <div className={"modal_container"}>
         <div className={"nav"}>
           <button
             autoFocus
@@ -69,11 +69,11 @@ const SearchModal: React.FC<SearchModalProps> = ({
           </div>
         </div>
 
-        <div className={"content"}>
+        <div className={"modal_content"}>
           <div>
             {currentFilter === "Location" && (
               <div className={"locationFilter"}>
-                <ul>
+                <ul style={{ color: "black" }}>
                   {cities.map((city) => {
                     return (
                       <li

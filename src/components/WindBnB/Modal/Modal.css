@@ -1,4 +1,4 @@
-.modal {
+.custom_modal {
   position: fixed;
   inset: 0; /* inset sets all 4 values (top right bottom left) much like how we set padding, margin etc., */
   background-color: rgba(0, 0, 0, 0.6);
@@ -12,7 +12,7 @@
   padding: 40px 20px 20px;
 }
 
-.modal-content {
+.custom_modal_content {
   width: 70%;
   height: 70%;
   background-color: #282c34;
